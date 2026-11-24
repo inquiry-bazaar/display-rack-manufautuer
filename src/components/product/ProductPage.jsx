@@ -7,7 +7,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import InquiryPopup from "@/components/layout/InquiryPopup";
 import {
     ArrowRight,
     ArrowUpRight,
@@ -31,6 +31,7 @@ import {
 
 import categories from "@/utils/data";
 import CTASection from "../home/CTASection";
+import { FaWhatsapp } from "react-icons/fa";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -81,6 +82,7 @@ export default function ProductPage({
     const imageRef = useRef(null);
     const tabContentRef = useRef(null);
 
+    const [openPopup, setOpenPopup] = useState(false);
     const [activeImage, setActiveImage] = useState(0);
     const [activeTab, setActiveTab] = useState("Overview");
     const [zoomOpen, setZoomOpen] = useState(false);
@@ -724,9 +726,7 @@ export default function ProductPage({
                             {/* Primary CTA Buttons */}
 
                             <div className="product-info-reveal mt-7 grid grid-cols-1 gap-3 min-[480px]:grid-cols-2">
-
-                                <Link
-                                    href={inquiryUrl}
+                                <button onClick={() => setOpenPopup(true)}
                                     className="group flex min-h-[56px] items-center justify-center gap-3 rounded-lg bg-secondary px-4 py-4 text-sm font-extrabold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(245,130,32,0.25)]"
                                 >
                                     <FileText size={21} />
@@ -737,7 +737,7 @@ export default function ProductPage({
                                         size={18}
                                         className="transition-transform group-hover:translate-x-1"
                                     />
-                                </Link>
+                                </button>
 
                                 <a
                                     href={`tel:${PHONE}`}
@@ -757,7 +757,7 @@ export default function ProductPage({
                                 rel="noopener noreferrer"
                                 className="product-info-reveal mt-4 flex items-center justify-center gap-2 rounded-lg border border-[#25D366]/25 bg-[#25D366]/5 px-5 py-3.5 text-sm font-bold text-[#168C45] transition-colors hover:bg-[#25D366]/10"
                             >
-                                <MessageCircle size={19} />
+                                <FaWhatsapp size={19} />
 
                                 Send Inquiry on WhatsApp
 
@@ -1236,6 +1236,13 @@ export default function ProductPage({
                 buttonText="Request a Free Quote"
                 buttonHref={inquiryUrl}
             />
+
+            {openPopup && (
+                <InquiryPopup
+                    options={{ product: product.name }}
+                    onClose={() => setOpenPopup(false)}
+                />
+            )}
         </main>
     );
 }
