@@ -13,11 +13,11 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const steps = [
     {
         number: "01",
-        label: "Consultation",
+        label: "Requirements & Consultation",
         title: "Understanding Your",
         highlight: "Requirements.",
         description:
-            "Every great retail space begins with a clear understanding of your business. We discuss your products, store dimensions, storage needs, and display goals.",
+            "We begin by understanding your business needs, measuring your available space, and identifying the ideal display rack solutions for your retail environment.",
     },
     {
         number: "02",
@@ -25,23 +25,23 @@ const steps = [
         title: "Designed Around",
         highlight: "Your Space.",
         description:
-            "Our team develops practical shelving layouts and customized rack configurations that make the best use of your available retail space.",
+            "Our team creates customized rack layouts, precise configurations, and efficient aisle arrangements to maximize your available space.",
     },
     {
         number: "03",
-        label: "Manufacturing",
+        label: "Manufacturing & Preparation",
         title: "Built With",
         highlight: "Precision.",
         description:
-            "Using quality materials, strong steel frameworks, and professional finishing processes, we manufacture racks designed for reliable everyday use.",
+            "Our manufactured steel components are carefully inspected, prepared, and assembled to ensure structural strength, durability, and premium finishing.",
     },
     {
         number: "04",
-        label: "Delivery & Installation",
-        title: "Ready for",
-        highlight: "Your Business.",
+        label: "Installation & Finishing",
+        title: "Installed With",
+        highlight: "Perfection.",
         description:
-            "We coordinate delivery and installation to help transform your store into an organized, functional, and professional retail environment.",
+            "Our skilled technicians complete the installation, ensure precise alignment, perform final quality checks, and deliver a clean, professionally finished display rack solution.",
     },
 ];
 
@@ -104,9 +104,7 @@ export default function HowWeWork() {
             const trigger = ScrollTrigger.create({
                 trigger: section,
                 start: "top top",
-
-                // 4 stages, each receiving 800px of scroll
-                end: "+=3200",
+                end: "+=2400",
 
                 pin: true,
                 pinSpacing: true,
@@ -117,7 +115,6 @@ export default function HowWeWork() {
                 onUpdate: (self) => {
                     const progress = self.progress;
 
-                    // Change step at 25%, 50%, and 75%
                     const index = Math.min(
                         Math.floor(progress * steps.length),
                         steps.length - 1
@@ -125,7 +122,6 @@ export default function HowWeWork() {
 
                     updateStep(index);
 
-                    // Synchronize video frames with scroll position
                     const duration = durationRef.current;
 
                     if (duration > 0 && video.readyState >= 1) {
@@ -135,13 +131,12 @@ export default function HowWeWork() {
                         );
 
                         if (
-                            Math.abs(video.currentTime - targetTime) > 0.04
+                            Math.abs(video.currentTime - targetTime) > 0.03
                         ) {
                             video.currentTime = targetTime;
                         }
                     }
 
-                    // Fill each progress bar according to its 25% segment
                     progressBars.forEach((bar, i) => {
                         const segmentProgress = gsap.utils.clamp(
                             0,
@@ -184,7 +179,7 @@ export default function HowWeWork() {
                     muted
                     playsInline
                     preload="auto"
-                    poster="/how-we-work-poster.webp"
+                    poster="/how-we.webp"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
 
