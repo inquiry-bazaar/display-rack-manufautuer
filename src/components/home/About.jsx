@@ -132,7 +132,7 @@ export default function About() {
 
     return (
         <section ref={sectionRef} id="about"
-            className="relative overflow-hidden bg-white py-10 sm:py-12 lg:py-16"
+            className="relative overflow-hidden bg-white py-10 sm:py-12 lg:py-16 border border-gray-300"
         >
             {/* Background decoration */}
             <div className="pointer-events-none absolute -left-40 top-20 h-[400px] w-[400px] rounded-full bg-secondary/5 blur-[120px]" />

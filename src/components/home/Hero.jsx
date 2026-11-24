@@ -137,7 +137,7 @@ export default function Hero() {
     return (
         <section
             ref={heroRef}
-            className="relative isolate flex min-h-[650px] items-center justify-center overflow-hidden bg-primary text-white sm:min-h-[520px]"
+            className="relative isolate flex min-h-[650px] items-center justify-center overflow-hidden bg-primary text-white sm:min-h-[580px]"
         >
             {/* ================= BACKGROUND VIDEO ================= */}
             <div className="pointer-events-none absolute inset-0 z-0">
@@ -189,7 +189,7 @@ export default function Hero() {
                     <h1 className="font-heading text-[clamp(2.2rem,5vw,6rem)] font-extrabold leading-[1.12] tracking-[-0.025em] text-white">
 
                         <span className="hero-heading-line block">
-                            Display Racks Built for
+                            Supermarket Racks Built for
                         </span>
 
                         <span className="hero-heading-line block">

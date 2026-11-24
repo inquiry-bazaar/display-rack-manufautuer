@@ -240,7 +240,7 @@ export default function About() {
                                         </p>
 
                                         <p className="mt-1 text-xs text-white/85">
-                                            Display Rack Solutions
+                                            Supermarket Rack Solutions
                                         </p>
                                     </div>
                                 </div>

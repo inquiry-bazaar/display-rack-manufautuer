@@ -18,7 +18,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Arya Insulation | Display Rack Manufacturer",
+  title: "Arya Insulation | Supermarket Rack Manufacturer",
   description:
     "Arya Insulation offers premium display racks, retail shelving, supermarket racks, and customized display rack solutions.",
 };

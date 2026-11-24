@@ -18,11 +18,11 @@ export default function page() {
     <>
       <Hero />
       <Marquee />
-      <Categories />
-      <RackShowcase />
-      <About />
       <Products />
       <YoutubeShorts />
+      <About />
+      <Categories />
+      {/* <RackShowcase /> */}
       <WhyChooseUs />
       <HowWeWork />
       <Industries />

@@ -1,307 +1,232 @@
-
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowUpRight } from "lucide-react";
+
+import {
+    ArrowUpRight,
+    ArrowRight,
+    Layers3,
+    Phone,
+    CheckCircle2,
+    MessageSquare,
+} from "lucide-react";
+
+import categories from "@/utils/data";
+import InquiryPopup from "@/components/layout/InquiryPopup";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Replace names, slugs, and image paths with your actual catalog.
-const products = [
-    {
-        id: 1,
-        name: "Supermarket Racks",
-        image: "/products/1.webp",
-        slug: "supermarket-racks",
-        bg: "#102A43",
-        accent: "#F58220",
-    },
-    {
-        id: 2,
-        name: "Gondola Racks",
-        image: "/products/2.webp",
-        slug: "gondola-racks",
-        bg: "#F58220",
-        accent: "#102A43",
-    },
-    {
-        id: 3,
-        name: "Wall Display Racks",
-        image: "/products/8.webp",
-        slug: "wall-display-racks",
-        bg: "#254A67",
-        accent: "#F5A65B",
-    },
-    {
-        id: 4,
-        name: "Departmental Racks",
-        image: "/products/4.webp",
-        slug: "departmental-racks",
-        bg: "#D96B17",
-        accent: "#102A43",
-    },
-    {
-        id: 5,
-        name: "Heavy Duty Racks",
-        image: "/products/5.webp",
-        slug: "heavy-duty-racks",
-        bg: "#163B56",
-        accent: "#F58220",
-    },
-    {
-        id: 6,
-        name: "Storage Racks",
-        image: "/products/6.webp",
-        slug: "storage-racks",
-        bg: "#E28A42",
-        accent: "#102A43",
-    },
-    {
-        id: 7,
-        name: "Retail Shelving",
-        image: "/products/7.webp",
-        slug: "retail-shelving",
-        bg: "#315C76",
-        accent: "#F58220",
-    },
-    {
-        id: 8,
-        name: "Corner Display Racks",
-        image: "/products/8.webp",
-        slug: "corner-display-racks",
-        bg: "#E47727",
-        accent: "#102A43",
-    },
-    {
-        id: 9,
-        name: "End Cap Racks",
-        image: "/products/9.webp",
-        slug: "end-cap-racks",
-        bg: "#1B425F",
-        accent: "#F5A65B",
-    },
-    {
-        id: 10,
-        name: "Warehouse Racks",
-        image: "/products/10.webp",
-        slug: "warehouse-racks",
-        bg: "#C9621D",
-        accent: "#102A43",
-    },
-    {
-        id: 11,
-        name: "Metal Display Racks",
-        image: "/products/6.webp",
-        slug: "metal-display-racks",
-        bg: "#234F69",
-        accent: "#F58220",
-    },
-    {
-        id: 12,
-        name: "Customized Racks",
-        image: "/products/1.webp",
-        slug: "customized-racks",
-        bg: "#E58B3C",
-        accent: "#102A43",
-    },
-];
+// ================= CATEGORY CARD =================
+function ProductCard({ category, index }) {
+    return (
+        <Link
+            href={`/${category.slug}`}
+            aria-label={`Explore ${category.name}`}
+            className="product-reveal group flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-white transition-all duration-500 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-[0_20px_45px_rgba(16,42,67,0.10)]"
+        >
+            {/* Image Area */}
 
-function ProductCard({ product, index }) {
-    const cardRef = useRef(null);
-    const imageRef = useRef(null);
-    const titleRef = useRef(null);
-    const shineRef = useRef(null);
+            <div className="relative aspect-[4/3.5] overflow-hidden bg-[#F3F5F7]">
 
-    const handleMouseMove = (event) => {
-        const card = cardRef.current;
-        if (!card) return;
+                {/* Background Circle */}
 
-        const rect = card.getBoundingClientRect();
+                <div className="absolute left-1/2 top-1/2 h-[75%] w-[75%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-transform duration-700 group-hover:scale-125" />
 
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
+                {/* Card Number */}
 
-        const rotateY = (x - 0.5) * 18;
-        const rotateX = (0.5 - y) * 18;
+                <span className="absolute left-4 top-4 z-10 font-heading text-xs font-extrabold tracking-wider text-primary/60">
+                    / {String(index + 1).padStart(2, "0")}
+                </span>
 
-        gsap.to(card, {
-            rotateX,
-            rotateY,
-            scale: 1.035,
-            duration: 0.45,
-            ease: "power2.out",
-            overwrite: "auto",
-        });
+                {/* Large Decorative Number */}
+                <span className="pointer-events-none absolute -right-2 bottom-0 font-heading text-[130px] font-black leading-none tracking-[-0.08em] text-primary/[0.1]">
+                    {String(index + 1).padStart(2, "0")}
+                </span>
 
-        gsap.to(imageRef.current, {
-            x: (x - 0.5) * 20,
-            y: (y - 0.5) * 16 - 12,
-            scale: 1.08,
-            duration: 0.5,
-            ease: "power2.out",
-            overwrite: "auto",
-        });
+                {/* Category Image */}
 
-        gsap.to(titleRef.current, {
-            x: (x - 0.5) * -12,
-            y: (y - 0.5) * -10,
-            duration: 0.5,
-            ease: "power2.out",
-            overwrite: "auto",
-        });
+                <div className="absolute inset-0 p-6 sm:p-8">
+                    <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-110">
+                        <Image
+                            src={category.png}
+                            alt={category.name}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                            className="object-contain drop-shadow-[0_15px_15px_rgba(16,42,67,0.12)]"
+                        />
+                    </div>
+                </div>
 
-        if (shineRef.current) {
-            shineRef.current.style.background = `
-        radial-gradient(
-          circle at ${x * 100}% ${y * 100}%,
-          rgba(255,255,255,0.24),
-          transparent 55%
-        )
-      `;
-        }
-    };
+                {/* Top Right Arrow */}
 
-    const handleMouseLeave = () => {
-        gsap.to(cardRef.current, {
-            rotateX: 0,
-            rotateY: 0,
-            scale: 1,
-            duration: 0.7,
-            ease: "elastic.out(1,0.55)",
-            overwrite: "auto",
-        });
+                <div className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-primary transition-all duration-300 group-hover:rotate-45 group-hover:border-secondary group-hover:bg-secondary group-hover:text-white">
+                    <ArrowUpRight size={20} />
+                </div>
 
-        gsap.to([imageRef.current, titleRef.current], {
-            x: 0,
-            y: 0,
-            scale: 1,
-            duration: 0.65,
-            ease: "power3.out",
-            overwrite: "auto",
-        });
+                {/* Animated Bottom Line */}
 
-        if (shineRef.current) {
-            shineRef.current.style.background = "transparent";
-        }
-    };
+                <div className="absolute inset-x-0 bottom-0 h-[3px] origin-left scale-x-0 bg-secondary transition-transform duration-500 group-hover:scale-x-100" />
+            </div>
+
+            {/* Card Content */}
+
+            <div className="flex flex-1 flex-col p-4">
+
+                <h3 className="font-heading text-lg font-extrabold leading-[1.35] tracking-[-0.025em] text-primary transition-colors duration-300 group-hover:text-secondary sm:text-xl">
+                    {category.name}
+                </h3>
+
+                <div className="mt-auto pt-3">
+                    <div className="flex items-center justify-between gap-3 border-t border-border pt-2">
+
+                        <span className="text-xs font-bold text-primary">
+                            Explore Collection
+                        </span>
+
+                        <ArrowRight
+                            size={18}
+                            className="text-secondary transition-transform duration-300 group-hover:translate-x-1"
+                        />
+                    </div>
+                </div>
+            </div>
+        </Link>
+    );
+}
+
+// ================= CONTACT CTA =================
+
+function ContactCard({ onOpen }) {
+    const benefits = [
+        "Customized Rack Solutions",
+        "Expert Layout Consultation",
+        "Professional Installation",
+    ];
 
     return (
-        <div
-            className="product-reveal"
-            style={{ perspective: "1100px" }}
-        >
-            <Link
-                href={`/areas/${product.slug}`}
-                aria-label={`View ${product.name}`}
-                className="block"
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                onBlur={handleMouseLeave}
-            >
-                <div
-                    ref={cardRef}
-                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-[24px] shadow-[0_25px_45px_-25px_rgba(16,42,67,0.45)] ring-[3px] ring-white transition-shadow duration-500 hover:shadow-[0_35px_65px_-25px_rgba(16,42,67,0.5)]"
-                    style={{
-                        backgroundColor: product.bg,
-                        transformStyle: "preserve-3d",
-                    }}
-                >
-                    {/* Background lighting */}
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_65%_at_30%_0%,rgba(255,255,255,0.2),transparent_75%)]" />
+        <div className="product-reveal relative isolate flex h-full min-h-[340px] flex-col justify-center overflow-hidden rounded-[20px] bg-primary p-7 text-white sm:col-span-2 sm:p-9 lg:p-10">
 
-                    {/* Large background number */}
-                    <span
-                        className="pointer-events-none absolute right-4 top-3 font-heading text-[90px] font-black leading-none opacity-15 sm:text-[110px]"
-                        style={{ color: "#FFFFFF" }}
-                    >
-                        {String(index + 1).padStart(2, "0")}
-                    </span>
+            {/* Background Image */}
+            <Image
+                src="/why1.webp"
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="-z-30 object-cover object-right"
+            />
 
-                    {/* Product name behind PNG */}
-                    <div
-                        ref={titleRef}
-                        className="pointer-events-none absolute inset-x-3 top-5 z-0 text-center"
-                        style={{
-                            transform: "translateZ(15px)",
-                        }}
-                    >
-                        <h3
-                            className="font-heading text-[clamp(1.6rem,2.3vw,2.8rem)] font-black uppercase leading-[0.98] tracking-[-0.015em]"
-                            style={{ color: "#FFFFFF" }}
-                        >
-                            {product.name}
-                        </h3>
-                    </div>
+            {/* Background Overlay */}
 
-                    {/* Decorative ring */}
-                    <div
-                        className="pointer-events-none absolute left-1/2 top-[53%] h-[65%] w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15"
-                        style={{
-                            transform: "translate(-50%, -50%) translateZ(5px)",
-                        }}
-                    />
+            <div className="absolute inset-0 -z-20 bg-primary/55" />
 
-                    {/* Product PNG */}
-                    <div
-                        ref={imageRef}
-                        className="pointer-events-none absolute bottom-4 left-[8%] z-10 h-[79%] w-[84%]"
-                        style={{
-                            transform: "translateZ(65px)",
-                        }}
-                    >
-                        <Image
-                            src={product.image}
-                            alt={product.name}
-                            fill
-                            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw"
-                            className="object-contain object-bottom drop-shadow-[0_22px_18px_rgba(0,0,0,0.3)]"
+            {/* <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#071A2C] via-[#102A43]/20 to-[#102A43]/5" /> */}
+
+            {/* Decorative Elements */}
+
+            <div className="pointer-events-none absolute -right-24 -top-24 h-[300px] w-[300px] rounded-full border-[40px] border-white/5" />
+
+            <div className="pointer-events-none absolute -bottom-32 -right-20 h-[300px] w-[300px] rounded-full bg-secondary/20 blur-[100px]" />
+
+            {/* Content */}
+
+            <div className="relative max-w-[480px]">
+
+                <div className="mb-5 flex items-center gap-3">
+
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/50 bg-white/20">
+                        <MessageSquare
+                            size={19}
+                            className="text-secondary"
                         />
                     </div>
 
-                    {/* Bottom gradient */}
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-black/35 to-transparent" />
-
-                    {/* Bottom product name */}
-                    <div
-                        className="absolute bottom-4 left-5 right-5 z-20 flex items-end justify-between gap-3"
-                        style={{
-                            transform: "translateZ(35px)",
-                        }}
-                    >
-                        <p className="max-w-[75%] font-heading text-base font-bold leading-5 text-white sm:text-lg">
-                            {product.name}
-                        </p>
-
-                        <span
-                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-white text-white transition-all duration-300 group-hover:rotate-45 group-hover:bg-white"
-                            style={{
-                                "--hover-accent": product.bg,
-                            }}
-                        >
-                            <ArrowUpRight
-                                size={21}
-                                className="group-hover:text-primary"
-                            />
-                        </span>
-                    </div>
-
-                    {/* Interactive shine */}
-                    <div
-                        ref={shineRef}
-                        className="pointer-events-none absolute inset-0 z-30"
-                    />
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white">
+                        Let's Build Your Space
+                    </span>
                 </div>
-            </Link>
+
+                <h3 className="font-heading text-white text-[clamp(1rem,3vw,3rem)] font-extrabold leading-[1.08] tracking-[-0.045em]">
+                    Can't Find the
+                    <br />
+                    Perfect{" "}
+                    <span className="text-secondary">
+                        Rack Solution?
+                    </span>
+                </h3>
+
+                {/* <p className="mt-4 max-w-[420px] text-sm leading-7 text-white/70">
+                    Share your requirements with our experts.
+                    We'll help you find the right display and
+                    storage solutions for your business.
+                </p> */}
+
+                {/* Benefits */}
+                <div className="mt-5 space-y-2.5">
+                    {benefits.map((benefit) => (
+                        <div
+                            key={benefit}
+                            className="flex items-center gap-2.5"
+                        >
+                            <CheckCircle2
+                                size={16}
+                                className="shrink-0 text-secondary"
+                            />
+
+                            <span className="text-xs font-medium text-white sm:text-sm">
+                                {benefit}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="mt-5 flex flex-wrap items-center gap-3">
+
+                    <button
+                        type="button"
+                        onClick={onOpen}
+                        className="group inline-flex items-center justify-center gap-3 rounded-lg bg-secondary px-5 py-3.5 text-xs font-extrabold text-white transition-all duration-300 hover:bg-white hover:text-primary sm:text-sm"
+                    >
+                        Get a Free Quote
+
+                        <ArrowUpRight
+                            size={18}
+                            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        />
+                    </button>
+
+                    <Link
+                        href="/contact-us"
+                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/55 px-5 py-3.5 text-xs font-bold text-white transition-all duration-300 hover:border-white hover:bg-white/10 sm:text-sm"
+                    >
+                        <Phone size={16} />
+
+                        Contact Us
+                    </Link>
+                </div>
+            </div>
+
+            {/* Orange Corner Accent */}
+
+            <div className="absolute bottom-0 right-0 h-20 w-20 rounded-tl-full bg-secondary/90" />
+
+            <ArrowUpRight
+                size={28}
+                className="absolute bottom-4 right-4 text-white"
+            />
         </div>
     );
 }
 
+// ================= MAIN PRODUCTS SECTION =================
 export default function Products() {
     const sectionRef = useRef(null);
+
+    const [openPopup, setOpenPopup] = useState(false);
 
     useEffect(() => {
         const reduced = window.matchMedia(
@@ -311,11 +236,14 @@ export default function Products() {
         if (reduced) return;
 
         const ctx = gsap.context(() => {
+
+            // Heading Animation
+
             gsap.fromTo(
                 ".products-heading",
                 {
                     opacity: 0,
-                    y: 40,
+                    y: 35,
                 },
                 {
                     opacity: 1,
@@ -331,93 +259,119 @@ export default function Products() {
                 }
             );
 
-            ScrollTrigger.batch(".product-reveal", {
-                start: "top 92%",
-                once: true,
-                onEnter: (elements) => {
-                    gsap.fromTo(
-                        elements,
-                        {
-                            opacity: 0,
-                            y: 55,
+            // Card Reveal Animation
+
+            const cards = gsap.utils.toArray(
+                ".product-reveal",
+                sectionRef.current
+            );
+
+            cards.forEach((card) => {
+                gsap.fromTo(
+                    card,
+                    {
+                        opacity: 0,
+                        y: 45,
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        clearProps: "transform,opacity",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 92%",
+                            once: true,
                         },
-                        {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.85,
-                            stagger: 0.08,
-                            ease: "power3.out",
-                            clearProps: "transform,opacity",
-                        }
-                    );
-                },
+                    }
+                );
             });
+
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
 
     return (
-        <section ref={sectionRef} id="products"
-            className="relative overflow-hidden bg-[#F7F9FB] py-10 sm:py-12 lg:py-16 border border-gray-300"
-        >
-            {/* Background decoration */}
-            <div className="pointer-events-none absolute -right-32 top-0 h-[450px] w-[450px] rounded-full bg-secondary/5 blur-[130px]" />
+        <>
+            <section
+                ref={sectionRef}
+                id="products"
+                className="relative overflow-hidden border-y border-border bg-[#F7F9FB] py-10 sm:py-12 lg:py-16"
+            >
+                {/* Background Decoration */}
 
-            <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12">
+                <div className="pointer-events-none absolute -right-32 top-0 h-[450px] w-[450px] rounded-full bg-secondary/5 blur-[130px]" />
 
-                {/* Section heading */}
-                <div className="mb-10 flex flex-col justify-between gap-7 md:flex-row md:items-end">
-                    <div className="max-w-[750px]">
+                <div className="relative mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12">
 
-                        <div className="products-heading mb-2 flex items-center gap-3">
-                            <span className="h-[2px] w-10 bg-secondary" />
+                    {/* Section Heading */}
 
-                            <span className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
-                                Our Product Collection
-                            </span>
+                    <div className="mb-10 flex flex-col justify-between gap-7 md:flex-row md:items-end">
+
+                        <div className="max-w-[800px]">
+
+                            <div className="products-heading mb-3 flex items-center gap-3">
+
+                                <span className="h-[2px] w-10 bg-secondary" />
+
+                                <span className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+                                    Our Product Collection
+                                </span>
+                            </div>
+
+                            <h2 className="products-heading font-heading text-[clamp(2.5rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
+                                Supermarket Racks Built
+                                <br />
+                                for{" "}
+                                <span className="text-secondary">
+                                    Every Space.
+                                </span>
+                            </h2>
                         </div>
 
-                        <h2 className="products-heading font-heading text-[clamp(2.5rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
-                            Display Racks Built
-                            <br />
-                            for{" "}
-                            <span className="text-secondary">
-                                Every Space.
-                            </span>
-                        </h2>
+                        <Link
+                            href="/areas"
+                            className="products-heading group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-secondary"
+                        >
+                            View All Products
 
-                        {/* <p className="products-heading mt-5 max-w-[600px] text-sm leading-7 text-muted sm:text-base">
-                            Discover our range of premium display racks,
-                            retail shelving, and storage systems designed
-                            for performance, durability, and style.
-                        </p> */}
+                            <ArrowUpRight
+                                size={19}
+                                className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                            />
+                        </Link>
                     </div>
 
-                    <Link
-                        href="/areas"
-                        className="group inline-flex w-fit items-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-secondary"
-                    >
-                        View All Products
+                    {/* Categories Grid */}
 
-                        <ArrowUpRight
-                            size={19}
-                            className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                        />
-                    </Link>
-                </div>
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:gap-7">
 
-                {/* 12 PRODUCT CARDS */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-7">
-                    {products.map((product, index) => (
-                        <ProductCard
-                            key={product.id}
-                            product={product}
-                            index={index}
+                        {categories.map((category, index) => (
+                            <ProductCard
+                                key={category.slug}
+                                category={category}
+                                index={index}
+                            />
+                        ))}
+
+                        {/* Contact CTA - Occupies Two Columns */}
+
+                        <ContactCard
+                            onOpen={() => setOpenPopup(true)}
                         />
-                    ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* Inquiry Popup */}
+
+            {openPopup && (
+                <InquiryPopup
+                    onClose={() => setOpenPopup(false)}
+                />
+            )}
+        </>
     );
 }

@@ -32,6 +32,7 @@ import {
 import categories from "@/utils/data";
 import CTASection from "../home/CTASection";
 import { FaWhatsapp } from "react-icons/fa";
+import FormSection from "../layout/FormSection";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -1228,14 +1229,9 @@ export default function ProductPage({
                 />
             )}
 
-            <CTASection
-                eyebrow="CUSTOM DISPLAY SOLUTIONS"
-                title="Need a Customized"
-                highlight="Display Rack?"
-                description="Let our team help you find the right display rack solution for your retail space."
-                buttonText="Request a Free Quote"
-                buttonHref={inquiryUrl}
-            />
+            <div className="pt-5">
+                <FormSection />
+            </div>
 
             {openPopup && (
                 <InquiryPopup
