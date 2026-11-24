@@ -148,7 +148,7 @@ export default function Hero() {
                     muted
                     playsInline
                     preload="metadata"
-                    poster="/hero.mp4"
+                    poster="/poster.webp"
                     onPlay={() => setIsPlaying(true)}
                     onPause={() => setIsPlaying(false)}
                     onVolumeChange={(e) =>
