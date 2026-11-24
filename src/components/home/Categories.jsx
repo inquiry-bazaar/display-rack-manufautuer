@@ -18,45 +18,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const categories = [
-    {
-        id: 1,
-        name: "Supermarket Display Racks",
-        image: "/products/1.webp",
-        href: "/areas/supermarket-display-racks",
-    },
-    {
-        id: 2,
-        name: "Gondola Display Racks",
-        image: "/products/2.webp",
-        href: "/areas/gondola-display-racks",
-    },
-    {
-        id: 3,
-        name: "Wall Mounted Racks",
-        image: "/products/8.webp",
-        href: "/areas/wall-mounted-racks",
-    },
-    {
-        id: 4,
-        name: "Departmental Store Racks",
-        image: "/products/4.webp",
-        href: "/areas/departmental-store-racks",
-    },
-    // {
-    //     id: 5,
-    //     name: "Heavy Duty Storage Racks",
-    //     image: "/products/5.webp",
-    //     href: "/areas/heavy-duty-storage-racks",
-    // },
-    {
-        id: 6,
-        name: "Heavy Duty Storage Racks",
-        image: "/products/6.webp",
-        href: "/areas/heavy-duty-storage-racks",
-    },
-];
+import categories from "@/utils/data";
 
 export default function Categories() {
     const sectionRef = useRef(null);
@@ -218,9 +180,9 @@ export default function Categories() {
                         className="!overflow-visible"
                     >
                         {categories.map((category, index) => (
-                            <SwiperSlide key={category.id}>
+                            <SwiperSlide key={index}>
                                 <Link
-                                    href={category.href}
+                                    href={category.slug}
                                     className="group block"
                                 >
                                     {/* Image area */}
@@ -237,7 +199,7 @@ export default function Categories() {
                                         {/* PNG rack image */}
                                         <div className="relative h-[90%] w-[90%] transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-105">
                                             <Image
-                                                src={category.image}
+                                                src={category.png}
                                                 alt={category.name}
                                                 fill
                                                 sizes="(max-width: 480px) 75vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
