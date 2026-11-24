@@ -29,6 +29,7 @@ import {
 import ProductMegaMenu, {
   products,
 } from "./ProductMegaMenu";
+import InquiryPopup from "./InquiryPopup";
 
 const PHONE = "+918587901795"; // Add actual phone number
 const EMAIL = "aryaindustry36@gmail.com"; // Add actual email
@@ -51,6 +52,7 @@ export default function Navbar() {
   const timelineRef = useRef(null);
   const [productsOpen, setProductsOpen] = useState(false);
   const closeTimerRef = useRef(null);
+  const [openPopup, setOpenPopup] = useState(false);
 
   const openProducts = () => {
     clearTimeout(closeTimerRef.current);
@@ -408,8 +410,8 @@ export default function Navbar() {
             </a>
 
             {/* Free Layout Button */}
-            <Link
-              href="/contact-us"
+            <button
+              onClick={() => setOpenPopup(true)}
               className=" group inline-flex h-[44px] min-w-[165px] shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-secondary px-5 text-[13px] font-bold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:brightness-95 hover:shadow-lg"
             >
               <span className="whitespace-nowrap">
@@ -420,7 +422,7 @@ export default function Navbar() {
                 size={17}
                 className="shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
               />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile action buttons */}
@@ -567,6 +569,11 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+      {openPopup && (
+        <InquiryPopup
+          onClose={() => setOpenPopup(false)}
+        />
+      )}
     </header>
   );
 }
