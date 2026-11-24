@@ -1,50 +1,19 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import {
+    ArrowRight,
+    ChevronRight,
+    LayoutGrid,
+} from "lucide-react";
 
-export const products = [
-    {
-        name: "Supermarket Display Racks",
-        slug: "supermarket-display-racks",
-        image: "/products/supermarket-racks.webp",
-        description: "Modern shelving for supermarkets.",
-    },
-    {
-        name: "Gondola Display Racks",
-        slug: "gondola-display-racks",
-        image: "/products/gondola-racks.webp",
-        description: "Versatile retail display solutions.",
-    },
-    {
-        name: "Wall Mounted Racks",
-        slug: "wall-mounted-racks",
-        image: "/products/wall-mounted-racks.webp",
-        description: "Space-saving wall display systems.",
-    },
-    {
-        name: "Departmental Store Racks",
-        slug: "departmental-store-racks",
-        image: "/products/departmental-racks.webp",
-        description: "Organized shelving for retail stores.",
-    },
-    {
-        name: "Heavy Duty Storage Racks",
-        slug: "heavy-duty-storage-racks",
-        image: "/products/heavy-duty-racks.webp",
-        description: "Durable industrial storage solutions.",
-    },
-    {
-        name: "Customized Display Racks",
-        slug: "customized-display-racks",
-        image: "/products/customized-racks.webp",
-        description: "Tailored to your store requirements.",
-    },
-];
+import categories from "@/utils/data";
+
+export const products = categories;
 
 export default function ProductMegaMenu({
     open,
@@ -53,80 +22,139 @@ export default function ProductMegaMenu({
     onNavigate,
 }) {
     const menuRef = useRef(null);
-    const animationRef = useRef(null);
+    const productGridRef = useRef(null);
+    const categoryListRef = useRef(null);
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [menuHeight, setMenuHeight] = useState(480);
+
+    const activeCategory = categories[activeIndex];
+
+    // ================= RESPONSIVE MENU HEIGHT =================
+
+    useEffect(() => {
+        if (!open) return;
+
+        const updateHeight = () => {
+            if (!menuRef.current) return;
+
+            const top =
+                menuRef.current.getBoundingClientRect().top;
+
+            const availableHeight =
+                window.innerHeight - top - 24;
+
+            setMenuHeight(
+                Math.max(0, Math.min(480, availableHeight))
+            );
+        };
+
+        updateHeight();
+
+        window.addEventListener("resize", updateHeight);
+
+        return () => {
+            window.removeEventListener("resize", updateHeight);
+        };
+    }, [open]);
+
+    // ================= MENU ANIMATION =================
 
     useEffect(() => {
         const menu = menuRef.current;
-        if (!menu) return;
 
-        animationRef.current?.kill();
+        if (!menu) return;
 
         const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         ).matches;
 
+        gsap.killTweensOf(menu);
+
         if (reducedMotion) {
             gsap.set(menu, {
                 autoAlpha: open ? 1 : 0,
+                pointerEvents: open ? "auto" : "none",
                 y: 0,
             });
+
             return;
         }
 
         if (open) {
             gsap.set(menu, {
-                visibility: "visible",
                 pointerEvents: "auto",
             });
 
-            const tl = gsap.timeline();
-
-            tl.fromTo(
+            gsap.fromTo(
                 menu,
                 {
-                    opacity: 0,
-                    y: -12,
+                    autoAlpha: 0,
+                    y: -8,
                 },
                 {
-                    opacity: 1,
+                    autoAlpha: 1,
                     y: 0,
-                    duration: 0.32,
+                    duration: 0.3,
                     ease: "power3.out",
+                    overwrite: true,
                 }
-            ).fromTo(
-                menu.querySelectorAll(".mega-item"),
-                {
-                    opacity: 0,
-                    y: 12,
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.35,
-                    stagger: 0.045,
-                    ease: "power2.out",
-                },
-                "-=0.18"
             );
-
-            animationRef.current = tl;
         } else {
-            animationRef.current = gsap.to(menu, {
-                opacity: 0,
+            gsap.set(menu, {
+                pointerEvents: "none",
+            });
+
+            gsap.to(menu, {
+                autoAlpha: 0,
                 y: -8,
                 duration: 0.2,
-                ease: "power2.in",
-                onComplete: () => {
-                    gsap.set(menu, {
-                        visibility: "hidden",
-                        pointerEvents: "none",
-                    });
-                },
+                ease: "power2.inOut",
+                overwrite: true,
             });
         }
 
-        return () => animationRef.current?.kill();
+        return () => gsap.killTweensOf(menu);
     }, [open]);
+
+    // ================= PRODUCT SWITCH ANIMATION =================
+
+    useEffect(() => {
+        const grid = productGridRef.current;
+
+        if (!open || !grid) return;
+
+        // Reset scroll when changing category
+        grid.scrollTop = 0;
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (reducedMotion) return;
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(
+                ".mega-product",
+                {
+                    opacity: 0,
+                    y: 8,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.28,
+                    stagger: 0.02,
+                    ease: "power2.out",
+                    overwrite: true,
+                }
+            );
+        }, grid);
+
+        return () => ctx.revert();
+    }, [activeIndex, open]);
+
+    if (!activeCategory) return null;
 
     return (
         <div
@@ -135,99 +163,209 @@ export default function ProductMegaMenu({
             onMouseLeave={onMouseLeave}
             aria-hidden={!open}
             inert={!open}
-            className="invisible absolute left-0 top-full z-40 hidden w-full border-t border-border bg-white opacity-0 shadow-[0_25px_60px_rgba(0,0,0,0.12)] lg:block"
-            style={{ pointerEvents: "none" }}
+            data-lenis-prevent
+            className="invisible absolute inset-x-0 top-full z-40 mx-auto hidden w-[calc(100%-48px)] max-w-[1280px] rounded-b-2xl border border-border bg-white opacity-0 shadow-[0_20px_60px_rgba(16,42,67,0.18)] lg:block"
+            style={{
+                pointerEvents: "none",
+                height: menuHeight,
+            }}
         >
-            <div className="mx-auto max-w-[1500px] px-8 py-8 lg:px-12">
+            {/* ================= MAIN CONTAINER ================= */}
+            <div className="grid h-full min-h-0 grid-cols-[300px_minmax(0,1fr)] gap-4 overflow-hidden p-4 xl:grid-cols-[330px_minmax(0,1fr)] xl:gap-5 xl:p-5">
 
-                {/* Header */}
-                <div className="mb-6 flex items-center justify-between border-b border-border pb-5">
-                    <div>
-                        <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-secondary">
-                            Our Product Range
-                        </p>
+                {/* ================= LEFT CATEGORIES ================= */}
 
-                        <h3 className="font-heading text-2xl font-extrabold text-primary">
-                            Explore Our Display Racks
-                        </h3>
-                    </div>
+                <aside className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-surface p-2.5">
 
-                    <Link
-                        href="/areas"
-                        onClick={onNavigate}
-                        className="group flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary"
-                    >
-                        View All Products
-                        <ArrowUpRight
-                            size={18}
-                            className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                        />
-                    </Link>
-                </div>
+                    {/* Fixed Sidebar Header */}
 
-                <div className="grid grid-cols-2 gap-4 xl:grid-cols-3">
-                    {products.map((product, index) => (
-                        <Link
-                            key={product.slug}
-                            href={`/areas/${product.slug}`}
-                            onClick={onNavigate}
-                            className="mega-item group flex items-center gap-4 rounded-xl border border-border/80 bg-white p-3 transition-all duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:bg-surface hover:shadow-md"
-                        >
-                            {/* Product image */}
-                            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-surface">
-                                <Image
-                                    src={product.image}
-                                    alt={product.name}
-                                    fill
-                                    sizes="96px"
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                            </div>
+                    <div className="mb-2 flex shrink-0 items-center justify-between border-b border-border px-2 py-3">
 
-                            {/* Product details */}
-                            <div className="min-w-0 flex-1">
-                                <span className="mb-2 block text-[10px] font-bold tracking-widest text-secondary">
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
+                        <div className="flex items-center gap-2">
 
-                                <h4 className="font-heading text-sm font-bold leading-snug text-primary transition-colors group-hover:text-secondary">
-                                    {product.name}
-                                </h4>
-
-                                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
-                                    {product.description}
-                                </p>
-                            </div>
-
-                            <ArrowRight
+                            <LayoutGrid
                                 size={17}
-                                className="shrink-0 text-muted transition-all duration-300 group-hover:translate-x-1 group-hover:text-secondary"
+                                className="text-secondary"
                             />
-                        </Link>
-                    ))}
-                </div>
 
-                {/* Bottom strip */}
-                <div className="mt-7 flex items-center justify-between rounded-lg bg-primary px-6 py-4">
-                    <div>
-                        <p className="text-sm font-bold text-white">
-                            Need a custom display rack?
-                        </p>
-                        <p className="mt-1 text-xs text-white/65">
-                            Get a layout tailored to your retail space.
-                        </p>
+                            <h4 className="text-[11px] font-extrabold uppercase tracking-widest text-primary">
+                                Categories
+                            </h4>
+                        </div>
+
+                        <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold text-primary">
+                            {categories.length}
+                        </span>
                     </div>
 
-                    <Link
-                        href="/contact-us"
-                        onClick={onNavigate}
-                        className="inline-flex items-center gap-2 rounded-md bg-secondary px-5 py-3 text-xs font-bold text-white transition-transform hover:-translate-y-0.5"
+                    {/* Scrollable Category List */}
+
+                    <div
+                        ref={categoryListRef}
+                        data-lenis-prevent
+                        className="mega-scrollbar min-h-0 flex-1 space-y-1.5 overflow-y-auto overscroll-contain pr-1"
                     >
-                        Request Free Layout
-                        <ArrowUpRight size={16} />
-                    </Link>
+                        {categories.map((category, index) => {
+                            const isActive =
+                                activeIndex === index;
+
+                            return (
+                                <Link
+                                    key={category.slug}
+                                    href={`/${category.slug}`}
+                                    onMouseEnter={() =>
+                                        setActiveIndex(index)
+                                    }
+                                    onFocus={() =>
+                                        setActiveIndex(index)
+                                    }
+                                    onClick={onNavigate}
+                                    className={`group relative flex min-h-[65px] items-center gap-2.5 rounded-lg border p-2 transition-colors duration-200 ${isActive
+                                        ? "border-primary bg-primary text-white"
+                                        : "border-transparent bg-white text-primary hover:border-secondary/30"
+                                        }`}
+                                >
+                                    {/* Active Indicator */}
+
+                                    {isActive && (
+                                        <span className="absolute left-0 top-1/2 h-7 w-[3px] -translate-y-1/2 rounded-r-full bg-secondary" />
+                                    )}
+
+                                    {/* Category Image */}
+
+                                    <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-md bg-white">
+                                        <Image
+                                            src={category.image}
+                                            alt={category.name}
+                                            fill
+                                            sizes="44px"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    </div>
+
+                                    {/* Category Name */}
+
+                                    <div className="min-w-0 flex-1">
+                                        <h5 className="text-[11px] font-bold leading-[1.5] xl:text-xs">
+                                            {category.name}
+                                        </h5>
+
+                                        <span
+                                            className={`mt-1 block text-[10px] ${isActive
+                                                ? "text-white/60"
+                                                : "text-muted"
+                                                }`}
+                                        >
+                                            {category.products.length} Products
+                                        </span>
+                                    </div>
+
+                                    <ChevronRight
+                                        size={15}
+                                        className={`shrink-0 ${isActive
+                                            ? "text-secondary"
+                                            : "text-muted"
+                                            }`}
+                                    />
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </aside>
+
+                {/* ================= RIGHT PRODUCTS ================= */}
+
+                <div className="flex h-full min-h-0 min-w-0 flex-col overflow-hidden">
+
+                    {/* Scrollable Product Container */}
+
+                    <div
+                        ref={productGridRef}
+                        data-lenis-prevent
+                        className="mega-scrollbar min-h-0 flex-1 overflow-y-auto overscroll-contain pr-2"
+                    >
+                        {/* Product Grid */}
+
+                        <div className="grid grid-cols-2 content-start gap-3">
+
+                            {activeCategory.products.map(
+                                (product, index) => (
+                                    <Link
+                                        key={product.slug}
+                                        href={`/${product.slug}`}
+                                        onClick={onNavigate}
+                                        className="mega-product group relative flex min-h-[100px] items-center gap-3 rounded-xl border border-border bg-white p-2.5 transition-[background-color,border-color,box-shadow] duration-300 hover:border-secondary/50 hover:bg-surface hover:shadow-sm"
+                                    >
+                                        {/* Product Image */}
+
+                                        <div className="relative h-[65px] w-[65px] shrink-0 overflow-hidden rounded-lg bg-surface xl:h-[75px] xl:w-[75px]">
+                                            <Image
+                                                src={product.image}
+                                                alt={product.name}
+                                                fill
+                                                sizes="75px"
+                                                className="object-contain p-1 transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                        </div>
+
+                                        {/* Product Details */}
+
+                                        <div className="min-w-0 flex-1">
+
+                                            <span className="mb-1 block text-[9px] font-bold tracking-widest text-secondary">
+                                                {String(
+                                                    index + 1
+                                                ).padStart(2, "0")}
+                                            </span>
+
+                                            <h5 className="font-heading text-[11px] font-bold leading-[1.5] text-primary transition-colors group-hover:text-secondary xl:text-xs">
+                                                {product.name}
+                                            </h5>
+
+                                            <span className="mt-1.5 inline-flex items-center gap-1.5 text-[10px] font-semibold text-muted transition-colors group-hover:text-secondary">
+                                                View Product
+
+                                                <ArrowRight
+                                                    size={12}
+                                                    className="transition-transform group-hover:translate-x-1"
+                                                />
+                                            </span>
+                                        </div>
+                                    </Link>
+                                )
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            {/* ================= CUSTOM SCROLLBAR ================= */}
+            <style jsx global>{`
+                .mega-scrollbar {
+                    scrollbar-width: thin;
+                    scrollbar-color: #f58220 #f3f5f7;
+                    overscroll-behavior: contain;
+                    touch-action: pan-y;
+                }
+
+                .mega-scrollbar::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                .mega-scrollbar::-webkit-scrollbar-track {
+                    background: #f3f5f7;
+                    border-radius: 10px;
+                }
+
+                .mega-scrollbar::-webkit-scrollbar-thumb {
+                    background: #f58220;
+                    border-radius: 10px;
+                }
+
+                .mega-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background: #102a43;
+                }
+            `}</style>
         </div>
     );
 }

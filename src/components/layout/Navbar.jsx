@@ -452,6 +452,18 @@ export default function Navbar() {
           </div>
         </div>
 
+        <div id="products-mega-menu">
+          <ProductMegaMenu
+            open={productsOpen}
+            onMouseEnter={openProducts}
+            onMouseLeave={closeProducts}
+            onNavigate={() => {
+              clearTimeout(closeTimerRef.current);
+              setProductsOpen(false);
+            }}
+          />
+        </div>
+
         {/* ================= MOBILE MENU ================= */}
         <div
           id="mobile-navigation"
