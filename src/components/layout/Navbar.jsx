@@ -54,6 +54,10 @@ export default function Navbar() {
   const closeTimerRef = useRef(null);
   const [openPopup, setOpenPopup] = useState(false);
 
+  if (pathname.startsWith("/admin")) {
+    return null; // Don't render the navbar on admin or dashboard pages
+  }
+
   const openProducts = () => {
     clearTimeout(closeTimerRef.current);
     setProductsOpen(true);

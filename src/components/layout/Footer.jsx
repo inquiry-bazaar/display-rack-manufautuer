@@ -11,6 +11,7 @@ import {
     Phone,
 } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const footerLinks = [
     {
@@ -75,8 +76,11 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+    const pathname = usePathname();
     const [email, setEmail] = useState("");
-
+    if (pathname.startsWith("/admin")) {
+        return null; // Don't render the navbar on admin or dashboard pages
+    }
     const handleNewsletter = (e) => {
         e.preventDefault();
 
