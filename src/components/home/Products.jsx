@@ -332,7 +332,7 @@ export default function Products() {
                         </div>
 
                         <Link
-                            href="/areas"
+                            href="/our-products"
                             className="products-heading group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-secondary"
                         >
                             View All Products

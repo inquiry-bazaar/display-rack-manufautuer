@@ -23,7 +23,6 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
 
     const result = getDataBySlug(slug);
-
     if (!result) {
         return {
             title: "Page Not Found",
@@ -31,8 +30,8 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-        title: `${result.data.name} | Arya Insulation`,
-        description: `Explore ${result.data.name} from Arya Insulation. Discover premium storage and display rack solutions for your business.`,
+        title: result.data.metaTitle || `${result.data.name} | Arya Insulation`,
+        description: result.data.metaDescription || `Explore ${result.data.name} from Arya Insulation. Discover premium storage and display rack solutions for your business.`,
         openGraph: {
             title: result.data.name,
             images: [result.data.image],

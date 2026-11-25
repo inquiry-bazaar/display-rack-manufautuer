@@ -19,7 +19,7 @@ const footerLinks = [
         links: [
             { label: "Home", href: "/" },
             { label: "About Us", href: "/about-us" },
-            { label: "Our Products", href: "/areas" },
+            { label: "Our Products", href: "/our-products" },
             { label: "Our Projects", href: "/#projects" },
             { label: "Industries", href: "/#industries" },
             { label: "Contact Us", href: "/contact-us" },
@@ -40,7 +40,7 @@ const footerLinks = [
         links: [
             { label: "Our Story", href: "/about-us" },
             { label: "Our Projects", href: "/#projects" },
-            { label: "Rack Solutions", href: "/areas" },
+            { label: "Rack Solutions", href: "/our-products" },
             { label: "Get a Quote", href: "/contact-us" },
             { label: "Contact", href: "/contact-us" },
         ],

@@ -211,7 +211,7 @@ export default function Hero() {
 
                         {/* Primary Button */}
                         <Link
-                            href="/areas"
+                            href="/our-products"
                             className="hero-button group inline-flex min-h-[56px] shrink-0 items-center justify-center gap-3 whitespace-nowrap rounded-lg bg-secondary px-7 py-4 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:brightness-95 hover:shadow-xl sm:px-9"
                         >
                             <span>

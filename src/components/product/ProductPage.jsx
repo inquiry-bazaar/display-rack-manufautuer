@@ -508,10 +508,6 @@ export default function ProductPage({
 
                 <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12">
                     <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_1fr] lg:gap-12 xl:gap-16">
-
-                        {/* ==================================
-                            LEFT PRODUCT GALLERY
-                        ================================== */}
                         <div className="product-gallery-reveal min-w-0">
 
                             <div
@@ -657,10 +653,6 @@ export default function ProductPage({
                                 Click the zoom icon to enlarge the product image.
                             </p>
                         </div>
-
-                        {/* ==================================
-                            RIGHT PRODUCT INFORMATION
-                        ================================== */}
 
                         <div className="min-w-0 lg:py-2">
 
@@ -817,10 +809,8 @@ export default function ProductPage({
                             {/* ================= OVERVIEW ================= */}
 
                             {activeTab === "Overview" && (
-                                <div className="grid items-start gap-8 lg:grid-cols-[1.25fr_0.9fr_1fr]">
-
+                                <div className="grid items-start gap-8 lg:grid-cols-[1fr_0.9fr]">
                                     {/* Overview Text */}
-
                                     <div>
                                         <h3 className="font-heading text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">
                                             Product Overview
@@ -831,82 +821,70 @@ export default function ProductPage({
                                         <p className="text-sm leading-[1.9] text-muted sm:text-base">
                                             {overview}
                                         </p>
-
-                                        <Link
-                                            href={inquiryUrl}
-                                            className="group mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary"
-                                        >
-                                            Get More Information
-
-                                            <ArrowRight
-                                                size={17}
-                                                className="text-secondary transition-transform group-hover:translate-x-1"
-                                            />
-                                        </Link>
                                     </div>
 
                                     {/* Application Image */}
+                                    <div>
+                                        <div className="relative min-h-[250px] overflow-hidden rounded-xl bg-surface">
 
-                                    <div className="relative min-h-[250px] overflow-hidden rounded-xl bg-surface">
-
-                                        <Image
-                                            src={
-                                                product.applicationImage ||
-                                                category?.image ||
-                                                product.image
-                                            }
-                                            alt={`${product.name} application`}
-                                            fill
-                                            sizes="(max-width: 1023px) 100vw, 30vw"
-                                            className="object-cover"
-                                        />
-                                    </div>
-
-                                    {/* Key Details */}
-
-                                    <div className="rounded-xl bg-surface p-5 sm:p-6">
-
-                                        <h3 className="font-heading text-xl font-extrabold text-primary">
-                                            Key Details
-                                        </h3>
-
-                                        <span className="mb-5 mt-3 block h-[3px] w-10 bg-secondary" />
-
-                                        <div className="divide-y divide-border">
-
-                                            {Object.entries(
-                                                specifications
-                                            )
-                                                .slice(0, 5)
-                                                .map(
-                                                    ([key, value]) => (
-                                                        <div
-                                                            key={key}
-                                                            className="grid grid-cols-[1fr_1.2fr] gap-3 py-3"
-                                                        >
-                                                            <span className="flex items-start gap-2 text-xs font-bold text-primary">
-
-                                                                <CheckCircle2
-                                                                    size={15}
-                                                                    className="mt-0.5 shrink-0 text-secondary"
-                                                                />
-
-                                                                {key}
-                                                            </span>
-
-                                                            <span className="break-words text-xs leading-relaxed text-foreground">
-                                                                {String(value)}
-                                                            </span>
-                                                        </div>
-                                                    )
-                                                )}
+                                            <Image
+                                                src={
+                                                    product.applicationImage ||
+                                                    category?.image ||
+                                                    product.image
+                                                }
+                                                alt={`${product.name} application`}
+                                                fill
+                                                sizes="(max-width: 1023px) 100vw, 30vw"
+                                                className="object-cover"
+                                            />
                                         </div>
 
-                                        {!product.specifications && (
-                                            <p className="mt-4 text-xs leading-relaxed text-muted">
-                                                Contact our team for technical specifications and available sizes.
-                                            </p>
-                                        )}
+                                        {/* Key Details */}
+                                        <div className="rounded-xl mt-2 bg-surface p-5 sm:p-6">
+
+                                            <h3 className="font-heading text-xl font-extrabold text-primary">
+                                                Key Details
+                                            </h3>
+
+                                            <span className="mb-5 mt-3 block h-[3px] w-10 bg-secondary" />
+
+                                            <div className="divide-y divide-border">
+
+                                                {Object.entries(
+                                                    specifications
+                                                )
+                                                    .slice(0, 5)
+                                                    .map(
+                                                        ([key, value]) => (
+                                                            <div
+                                                                key={key}
+                                                                className="grid grid-cols-[1fr_1.2fr] gap-3 py-3"
+                                                            >
+                                                                <span className="flex items-start gap-2 text-xs font-bold text-primary">
+
+                                                                    <CheckCircle2
+                                                                        size={15}
+                                                                        className="mt-0.5 shrink-0 text-secondary"
+                                                                    />
+
+                                                                    {key}
+                                                                </span>
+
+                                                                <span className="break-words text-xs leading-relaxed text-foreground">
+                                                                    {String(value)}
+                                                                </span>
+                                                            </div>
+                                                        )
+                                                    )}
+                                            </div>
+
+                                            {!product.specifications && (
+                                                <p className="mt-4 text-xs leading-relaxed text-muted">
+                                                    Contact our team for technical specifications and available sizes.
+                                                </p>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             )}
@@ -1126,7 +1104,7 @@ export default function ProductPage({
                                 href={
                                     category
                                         ? `/${category.slug}`
-                                        : "/areas"
+                                        : "/our-products"
                                 }
                                 className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-lg border border-primary px-6 py-3.5 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-white"
                             >

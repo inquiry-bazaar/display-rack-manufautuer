@@ -39,7 +39,7 @@ export default function CTASection({
     highlight = "Retail Space?",
     description = "Discover durable, functional, and beautifully designed display rack solutions for your business.",
     buttonText = "Explore Our Solutions",
-    buttonHref = "/areas",
+    buttonHref = "/our-products",
     image = "/cta.webp",
     features = defaultFeatures,
     className = "",

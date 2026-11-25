@@ -38,7 +38,7 @@ const WHATSAPP = "https://wa.me/918587901795"; // Add number with country code, 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about-us" },
-  { name: "Our Products", href: "/areas" },
+  { name: "Our Products", href: "/our-products" },
   { name: "Our Articles", href: "/our-articles" },
   { name: "Contact", href: "/contact-us" },
 ];
