@@ -10,7 +10,7 @@ import {
     MapPin,
     Phone,
 } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
 const footerLinks = [
@@ -48,11 +48,11 @@ const footerLinks = [
     {
         title: "Quick Links",
         links: [
-            { label: "Supermarket Racks", href: "/areas" },
-            { label: "Gondola Shelving", href: "/areas" },
-            { label: "Retail Display Racks", href: "/areas" },
-            { label: "Storage Racks", href: "/areas" },
-            { label: "Custom Solutions", href: "/contact-us" },
+            { label: "Kirana & Grocery Store Supermarket Racks", href: "/kirana-and-grocery-store-supermarket-racks" },
+            { label: "Hypermarket & Departmental Store Supermarket Racks", href: "/hypermarket-and-departmental-store-supermarket-racks", },
+            { label: "Medical & Pharmacy Store Supermarket Racks", href: "/medical-and-pharmacy-store-supermarket-racks" },
+            { label: "Fruit, Vegetable & Organic Store Supermarket Racks", href: "/fruit-vegetable-and-organic-store-supermarket-racks" },
+            { label: "Bakery, Snacks & Beverage Supermarket Racks", href: "/bakery-snacks-and-beverage-supermarket-rackss" },
         ],
     },
 ];
@@ -60,18 +60,18 @@ const footerLinks = [
 const socialLinks = [
     {
         name: "Instagram",
-        href: "https://www.instagram.com/",
+        href: "https://www.instagram.com/aryadisplay/?igsh=MTJlaDFhaGgxeXl4eQ%3D%3D#",
         icon: FaInstagram,
     },
     {
         name: "Facebook",
-        href: "https://www.facebook.com/",
+        href: "https://www.facebook.com/profile.php?viewas=100000686899395&id=61571410907364",
         icon: FaFacebook,
     },
     {
-        name: "LinkedIn",
-        href: "https://www.linkedin.com/",
-        icon: FaLinkedin,
+        name: "Youtube",
+        href: "https://www.youtube.com/@aryaindustry1074",
+        icon: FaYoutube,
     },
 ];
 
