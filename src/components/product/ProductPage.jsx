@@ -762,11 +762,8 @@ export default function ProductPage({
                     {/* ======================================
                         PRODUCT DETAILS TABS
                     ====================================== */}
-
                     <div className="product-section-reveal mt-12">
-
                         {/* Tab Navigation */}
-
                         <div
                             role="tablist"
                             aria-label="Product details"
@@ -797,7 +794,6 @@ export default function ProductPage({
                         </div>
 
                         {/* Tab Content */}
-
                         <div
                             ref={tabContentRef}
                             id="product-tab-panel"
@@ -835,6 +831,7 @@ export default function ProductPage({
                                                 }
                                                 alt={`${product.name} application`}
                                                 fill
+                                                unoptimized
                                                 sizes="(max-width: 1023px) 100vw, 30vw"
                                                 className="object-cover"
                                             />
