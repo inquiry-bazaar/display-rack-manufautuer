@@ -3,6 +3,7 @@ import { Manrope, Inter } from "next/font/google";
 import "./globals.css"; import Navbar from "@/components/layout/Navbar";
 import SmoothScroll from "@/components/layout/Scroll";
 import Footer from "@/components/layout/Footer";
+import FloatingContact from "@/components/layout/FloatingContact";
 ;
 
 const manrope = Manrope({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <FloatingContact />
         </SmoothScroll>
       </body>
     </html>
