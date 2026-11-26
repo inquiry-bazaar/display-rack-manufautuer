@@ -235,7 +235,7 @@ export default function ProductMegaMenu({
 
                                     <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-md bg-white">
                                         <Image
-                                            src={category.image}
+                                            src={category.png}
                                             alt={category.name}
                                             fill
                                             sizes="44px"

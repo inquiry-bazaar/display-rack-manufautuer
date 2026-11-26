@@ -2,8 +2,8 @@ export default [
     {
         "name": "Kirana & Grocery Store Supermarket Racks",
         "slug": "kirana-and-grocery-store-supermarket-racks",
-        "image": "/3.webp",
-        "png": "/products/1.webp",
+        "image": "/categories/1.webp",
+        "png": "/categories/11.webp",
         "products": [
             {
                 "name": "Wall Mounted Kirana Store Supermarket Rack",
@@ -13,9 +13,8 @@ export default [
                 "metaDescription": "Arya Insulation Pvt Ltd manufactures wall mounted kirana store in MS steel. Contact us for customized rack options.",
 
                 images: [
-                    "/products/wall-mounted/front.webp",
-                    "/products/wall-mounted/side.webp",
-                    "/products/wall-mounted/detail.webp",
+                    "/products/2.webp",
+                    "/products/3.webp",
                 ],
 
                 description: "A wall-mounted kirana store rack helps retailers use vertical wall space to organize packaged groceries and everyday essentials. Its MS steel structure provides a stable display framework, while adjustable shelf arrangements can be planned around different product sizes.",
@@ -379,8 +378,8 @@ export default [
     {
         "name": "Hypermarket & Departmental Store Supermarket Racks",
         "slug": "hypermarket-and-departmental-store-supermarket-racks",
-        "image": "/categories/hypermarket-and-departmental-store-supermarket-racks.webp",
-        "png": "/products/2.webp",
+        "image": "/categories/2.webp",
+        "png": "/categories/12.webp",
         "products": [
             {
                 "name": "Double Sided Gondola Supermarket Rack",
@@ -806,8 +805,8 @@ export default [
     {
         "name": "Convenience Store & Mini Mart Supermarket Racks",
         "slug": "convenience-store-and-mini-mart-supermarket-racks",
-        "image": "/categories/convenience-store-and-mini-mart-supermarket-racks.webp",
-        "png": "/products/4.webp",
+        "image": "/categories/3.webp",
+        "png": "/categories/13.webp",
         "products": [
             {
                 "name": "Compact Mini Mart Supermarket Rack",
@@ -1246,8 +1245,8 @@ export default [
     {
         "name": "Medical & Pharmacy Store Supermarket Racks",
         "slug": "medical-and-pharmacy-store-supermarket-racks",
-        "image": "/categories/medical-and-pharmacy-store-supermarket-racks.webp",
-        "png": "/products/5.webp",
+        "image": "/categories/4.webp",
+        "png": "/categories/14.webp",
         "products": [
             {
                 "name": "Medical Store Wall Supermarket Rack",
@@ -1693,8 +1692,8 @@ export default [
     {
         "name": "Fruit, Vegetable & Organic Store Supermarket Racks",
         "slug": "fruit-vegetable-and-organic-store-supermarket-racks",
-        "image": "/categories/fruit-vegetable-and-organic-store-supermarket-racks.webp",
-        "png": "/products/6.webp",
+        "image": "/categories/5.webp",
+        "png": "/categories/15.webp",
         "products": [
             {
                 "name": "Fruit & Vegetable Supermarket Rack",
@@ -2055,8 +2054,8 @@ export default [
     {
         "name": "Bakery, Snacks & Beverage Supermarket Racks",
         "slug": "bakery-snacks-and-beverage-supermarket-racks",
-        "image": "/categories/bakery-snacks-and-beverage-supermarket-racks.webp",
-        "png": "/products/7.webp",
+        "image": "/categories/6.webp",
+        "png": "/categories/16.webp",
         "products": [
             {
                 "name": "Bakery Bread Supermarket Rack",
@@ -2475,8 +2474,8 @@ export default [
     {
         "name": "Mobile & Electronics Store Supermarket Racks",
         "slug": "mobile-and-electronics-store-supermarket-racks",
-        "image": "/categories/mobile-and-electronics-store-supermarket-racks.webp",
-        "png": "/products/8.webp",
+        "image": "/categories/7.webp",
+        "png": "/categories/17.webp",
         "products": [
             {
                 "name": "Mobile Accessories Supermarket Rack",
@@ -2896,8 +2895,8 @@ export default [
     {
         "name": "Cosmetic & Personal Care Store Supermarket Racks",
         "slug": "cosmetic-and-personal-care-store-supermarket-racks",
-        "image": "/categories/cosmetic-and-personal-care-store-supermarket-racks.webp",
-        "png": "/products/9.webp",
+        "image": "/categories/8.webp",
+        "png": "/categories/18.webp",
         "products": [
             {
                 "name": "Cosmetic Store Supermarket Rack",
@@ -3373,8 +3372,8 @@ export default [
     {
         "name": "Stationery, Toy & Gift Store Supermarket Racks",
         "slug": "stationery-toy-and-gift-store-supermarket-racks",
-        "image": "/categories/stationery-toy-and-gift-store-supermarket-racks.webp",
-        "png": "/products/10.webp",
+        "image": "/categories/9.webp",
+        "png": "/categories/19.webp",
         "products": [
             {
                 "name": "Stationery Store Supermarket Rack",
@@ -3900,8 +3899,8 @@ export default [
     {
         "name": "Hardware, Paint & Home Store Supermarket Racks",
         "slug": "hardware-paint-and-home-store-supermarket-racks",
-        "image": "/categories/hardware-paint-and-home-store-supermarket-racks.webp",
-        "png": "/products/2.webp",
+        "image": "/categories/10.webp",
+        "png": "/categories/20.webp",
         "products": [
             {
                 "name": "Hardware Store Supermarket Rack",

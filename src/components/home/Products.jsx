@@ -49,8 +49,8 @@ function ProductCard({ category, index }) {
 
                 {/* Category Image */}
 
-                <div className="absolute inset-0 p-6 sm:p-8">
-                    <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-110">
+                <div className="absolute inset-0 p-3">
+                    <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-105">
                         <Image
                             src={category.png}
                             alt={category.name}
