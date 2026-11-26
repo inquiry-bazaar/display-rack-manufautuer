@@ -14,7 +14,6 @@ export default [
 
                 images: [
                     "/products/2.webp",
-                    "/products/3.webp",
                 ],
 
                 description: "A wall-mounted kirana store rack helps retailers use vertical wall space to organize packaged groceries and everyday essentials. Its MS steel structure provides a stable display framework, while adjustable shelf arrangements can be planned around different product sizes.",

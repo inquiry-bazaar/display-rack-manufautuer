@@ -576,7 +576,7 @@ export default function ProductPage({
                                             fill
                                             priority
                                             sizes="(max-width: 1023px) 100vw, 50vw"
-                                            className="object-contain p-6 sm:p-10"
+                                            className="object-contain"
                                         />
                                     </div>
 
@@ -588,18 +588,18 @@ export default function ProductPage({
                                                 type="button"
                                                 onClick={previousImage}
                                                 aria-label="Previous image"
-                                                className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md transition-all hover:bg-secondary hover:text-white sm:left-4 sm:h-11 sm:w-11"
+                                                className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md transition-all hover:bg-secondary hover:text-white sm:left-1 sm:h-9 sm:w-9"
                                             >
-                                                <ChevronLeft size={23} />
+                                                <ChevronLeft size={20} />
                                             </button>
 
                                             <button
                                                 type="button"
                                                 onClick={nextImage}
                                                 aria-label="Next image"
-                                                className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md transition-all hover:bg-secondary hover:text-white sm:right-4 sm:h-11 sm:w-11"
+                                                className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-md transition-all hover:bg-secondary hover:text-white sm:right-1 sm:h-9 sm:w-9"
                                             >
-                                                <ChevronRight size={23} />
+                                                <ChevronRight size={20} />
                                             </button>
 
                                             <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-white/90 px-3 py-2 backdrop-blur-md">
@@ -640,9 +640,9 @@ export default function ProductPage({
                                         <ZoomIn size={22} />
                                     </button>
 
-                                    <div className="absolute left-4 top-4 rounded-md bg-white/90 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-primary backdrop-blur-md">
+                                    {/* <div className="absolute left-4 top-4 rounded-md bg-white/90 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-primary backdrop-blur-md">
                                         Product Gallery
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
 
