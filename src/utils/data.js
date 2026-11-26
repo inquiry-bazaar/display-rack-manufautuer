@@ -127,7 +127,7 @@ export default [
                     "FMCG Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
             {
                 "name": "Perforated Back Grocery Supermarket Rack",
@@ -172,7 +172,7 @@ export default [
                     "Convenience Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
             {
                 "name": "Wire Mesh Back Grocery Supermarket Rack",
@@ -217,7 +217,7 @@ export default [
                     "FMCG Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
             {
                 "name": "Corner Kirana Supermarket Rack",
@@ -262,7 +262,7 @@ export default [
                     "Compact Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
             {
                 "name": "Grain, Pulses & Spice Supermarket Rack",
@@ -308,7 +308,7 @@ export default [
                     "Supermarkets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
             {
                 "name": "Dry Fruit Gravity Supermarket Rack",
@@ -355,7 +355,7 @@ export default [
                     "Specialty Food Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/1.webp",
             },
         ]
     },
@@ -407,7 +407,7 @@ export default [
                     "Large-Format Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "End Cap Gondola Supermarket Rack",
@@ -449,7 +449,7 @@ export default [
                     "Retail Chains",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Corner Gondola Supermarket Rack",
@@ -493,7 +493,7 @@ export default [
                     "Large Retail Spaces",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Departmental Store Wall Supermarket Rack",
@@ -537,7 +537,7 @@ export default [
                     "Multi-Category Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Cash & Carry Heavy Duty Supermarket Rack",
@@ -580,7 +580,7 @@ export default [
                     "Bulk Grocery Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Promotional Island Supermarket Rack",
@@ -624,7 +624,7 @@ export default [
                     "Promotional Retail Zones",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Checkout Counter Impulse Supermarket Rack",
@@ -670,7 +670,7 @@ export default [
                     "Retail Checkout Counters",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Backstore Storage Supermarket Rack",
@@ -717,7 +717,7 @@ export default [
                     "Retail Warehouses",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
             {
                 "name": "Premium Supermarket Rack",
@@ -764,7 +764,7 @@ export default [
                     "Departmental Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/2.webp",
             },
         ]
     },
@@ -816,7 +816,7 @@ export default [
                     "Kiosks",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Convenience Store Display Supermarket Rack",
@@ -863,7 +863,7 @@ export default [
                     "Neighbourhood Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Petrol Pump Store Supermarket Rack",
@@ -906,7 +906,7 @@ export default [
                     "Fuel Station Shops",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Hospital & Campus Store Supermarket Rack",
@@ -953,7 +953,7 @@ export default [
                     "Institutional Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Low Height Island Supermarket Rack",
@@ -997,7 +997,7 @@ export default [
                     "Compact Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Slim Aisle Convenience Supermarket Rack",
@@ -1041,7 +1041,7 @@ export default [
                     "Small Grocery Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Wire Basket Convenience Supermarket Rack",
@@ -1088,7 +1088,7 @@ export default [
                     "Supermarket Promotional Areas",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Snacks & Beverage Convenience Supermarket Rack",
@@ -1137,7 +1137,7 @@ export default [
                     "Supermarket Snack Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
             {
                 "name": "Movable Supermarket Rack with Wheels",
@@ -1186,7 +1186,7 @@ export default [
                     "Retail Spaces Requiring Movable Displays",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/3.webp",
             },
         ]
     },
@@ -1238,7 +1238,7 @@ export default [
                     "Healthcare Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Pharmacy Gondola Supermarket Rack",
@@ -1282,7 +1282,7 @@ export default [
                     "Wellness Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Pharmacy Drawer Unit Supermarket Rack",
@@ -1327,7 +1327,7 @@ export default [
                     "Medicine Stock Areas",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Medicine Strip Bin Supermarket Rack",
@@ -1372,7 +1372,7 @@ export default [
                     "Healthcare Product Counters",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Glass Door Pharmacy Supermarket Rack",
@@ -1420,7 +1420,7 @@ export default [
                     "Selected Product Display Areas",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Perforated Pharmacy Supermarket Rack",
@@ -1470,7 +1470,7 @@ export default [
                     "Surgical Supply Shops",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Ayurvedic & Herbal Display Supermarket Rack",
@@ -1519,7 +1519,7 @@ export default [
                     "Wellness Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Baby Care & Wellness Supermarket Rack",
@@ -1568,7 +1568,7 @@ export default [
                     "Mother-and-Child Retail Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
             {
                 "name": "Surgical Items Supermarket Rack",
@@ -1618,7 +1618,7 @@ export default [
                     "Healthcare Stock Areas",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/4.webp",
             },
         ]
     },
@@ -1673,7 +1673,7 @@ export default [
                     "Supermarket Fresh-Produce Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Inclined Vegetable Supermarket Rack",
@@ -1723,7 +1723,7 @@ export default [
                     "Fresh-Produce Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Stepped Fruit Display Supermarket Rack",
@@ -1771,7 +1771,7 @@ export default [
                     "Fresh-Produce Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Stainless Steel Vegetable Supermarket Rack",
@@ -1820,7 +1820,7 @@ export default [
                     "Fresh-Food Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Fruit Supermarket Rack",
@@ -1869,7 +1869,7 @@ export default [
                     "Fresh-Produce Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Onion & Potato Supermarket Rack",
@@ -1918,7 +1918,7 @@ export default [
                     "Produce Markets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
             {
                 "name": "Island Fruit & Vegetable Supermarket Rack",
@@ -1968,7 +1968,7 @@ export default [
                     "Large Grocery Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/5.webp",
             },
         ]
     },
@@ -2025,7 +2025,7 @@ export default [
                     "Bakery Retail Counters",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Biscuit & Cookie Supermarket Rack",
@@ -2074,7 +2074,7 @@ export default [
                     "Biscuit Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Namkeen & Packaged Snacks Supermarket Rack",
@@ -2124,7 +2124,7 @@ export default [
                     "Convenience Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Chips Hanging Supermarket Rack",
@@ -2174,7 +2174,7 @@ export default [
                     "Snack Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Chocolate & Candy Supermarket Rack",
@@ -2224,7 +2224,7 @@ export default [
                     "Checkout Zones",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Cold Drink & Beverage Supermarket Rack",
@@ -2274,7 +2274,7 @@ export default [
                     "Convenience Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Packaged Water Bottle Supermarket Rack",
@@ -2323,7 +2323,7 @@ export default [
                     "Bulk Retail Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
             {
                 "name": "Tea & Coffee Supermarket Rack",
@@ -2372,7 +2372,7 @@ export default [
                     "Convenience Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/6.webp",
             },
         ]
     },
@@ -2430,7 +2430,7 @@ export default [
                     "Multi-Brand Showrooms",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Slatwall Mobile Supermarket Rack",
@@ -2479,7 +2479,7 @@ export default [
                     "Mobile Phone Showrooms",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Earphone & Gadget Supermarket Rack",
@@ -2530,7 +2530,7 @@ export default [
                     "Multi-Brand Showrooms",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Computer Accessories Supermarket Rack",
@@ -2579,7 +2579,7 @@ export default [
                     "Showrooms",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Electronics Gondola Supermarket Rack",
@@ -2628,7 +2628,7 @@ export default [
                     "Large-Format Electronics Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Home Appliance Supermarket Rack",
@@ -2676,7 +2676,7 @@ export default [
                     "Multi-Brand Retail Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "LED Bulb & Lighting Supermarket Rack",
@@ -2726,7 +2726,7 @@ export default [
                     "Electronics Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
             {
                 "name": "Battery & Small Electronics Supermarket Rack",
@@ -2777,7 +2777,7 @@ export default [
                     "Hardware Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/7.webp",
             },
         ]
     },
@@ -2835,7 +2835,7 @@ export default [
                     "Personal Care Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Wall Mounted Cosmetic Supermarket Rack",
@@ -2887,7 +2887,7 @@ export default [
                     "Personal Care Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Personal Care Gondola Supermarket Rack",
@@ -2937,7 +2937,7 @@ export default [
                     "Pharmacy Retail Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Shampoo & Hair Care Supermarket Rack",
@@ -2986,7 +2986,7 @@ export default [
                     "Personal Care Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Skin Care Supermarket Rack",
@@ -3036,7 +3036,7 @@ export default [
                     "Personal Care Sections",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Perfume & Deodorant Supermarket Rack",
@@ -3086,7 +3086,7 @@ export default [
                     "Beauty Showrooms",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Soap & Toiletries Supermarket Rack",
@@ -3135,7 +3135,7 @@ export default [
                     "Personal Care Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Nail Polish & Lipstick Supermarket Rack",
@@ -3186,7 +3186,7 @@ export default [
                     "Salon Retail Areas",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
             {
                 "name": "Salon Products Supermarket Rack",
@@ -3238,7 +3238,7 @@ export default [
                     "Professional Beauty Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/8.webp",
             },
         ]
     },
@@ -3295,7 +3295,7 @@ export default [
                     "Supermarkets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Notebook & Register Supermarket Rack",
@@ -3344,7 +3344,7 @@ export default [
                     "Office Supply Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Pen & Office Supplies Supermarket Rack",
@@ -3395,7 +3395,7 @@ export default [
                     "School Supply Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Art & Craft Supermarket Rack",
@@ -3445,7 +3445,7 @@ export default [
                     "Hobby Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "School Bag Supermarket Rack",
@@ -3495,7 +3495,7 @@ export default [
                     "Department Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Book Store Supermarket Rack",
@@ -3545,7 +3545,7 @@ export default [
                     "Magazine Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Toy Store Supermarket Rack",
@@ -3595,7 +3595,7 @@ export default [
                     "Children's Product Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Gift Shop Supermarket Rack",
@@ -3645,7 +3645,7 @@ export default [
                     "Department Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Greeting Card Supermarket Rack",
@@ -3695,7 +3695,7 @@ export default [
                     "Bookstores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
             {
                 "name": "Pooja Samagri Supermarket Rack",
@@ -3745,7 +3745,7 @@ export default [
                     "General Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/9.webp",
             },
         ]
     },
@@ -3802,7 +3802,7 @@ export default [
                     "Home Improvement Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Paint Shop Supermarket Rack",
@@ -3851,7 +3851,7 @@ export default [
                     "Home Improvement Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Tools Pegboard Supermarket Rack",
@@ -3902,7 +3902,7 @@ export default [
                     "Home Improvement Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Electrical Shop Supermarket Rack",
@@ -3953,7 +3953,7 @@ export default [
                     "Building Supply Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Sanitary & Plumbing Supermarket Rack",
@@ -4004,7 +4004,7 @@ export default [
                     "Building Material Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Fastener Bin Supermarket Rack",
@@ -4054,7 +4054,7 @@ export default [
                     "Maintenance Stores",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Auto Parts Supermarket Rack",
@@ -4105,7 +4105,7 @@ export default [
                     "Industrial Suppliers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Lubricant Oil Supermarket Rack",
@@ -4154,7 +4154,7 @@ export default [
                     "Vehicle Service Outlets",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
             {
                 "name": "Home Utility & Plasticware Supermarket Rack",
@@ -4203,7 +4203,7 @@ export default [
                     "Household Goods Retailers",
                 ],
 
-                applicationImage: "/3.webp",
+                applicationImage: "/categories/10.webp",
             },
         ]
     }
