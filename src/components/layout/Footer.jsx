@@ -215,28 +215,7 @@ export default function Footer() {
                 </div>
 
                 {/* Huge brand wordmark */}
-                <div className="relative mt-9 border-t border-primary/10 pt-7 sm:mt-5 sm:pt-5">
-                    <Link
-                        href="/"
-                        aria-label="Arya Insulation - Back to homepage"
-                        className="group block w-full"
-                    >
-                        <div className="flex items-center justify-center gap-[1.5vw]">
-                            {/* Logo mark */}
-                            <div className="relative flex aspect-square w-[12%] shrink-0 items-center justify-center overflow-hidden rounded-[12px] sm:rounded-[20px] lg:rounded-[28px]">
-                                {/* Abstract rack-inspired symbol */}
-                                <img src="/logo.webp" alt="logo" />
-                            </div>
-
-                            {/* Large text */}
-                            <div className="min-w-0 flex-1">
-                                <span className="block whitespace-nowrap font-heading text-[clamp(1.55rem,6.4vw,7.7rem)] font-extrabold leading-[1] tracking-[0.2em] text-primary transition-colors duration-500 group-hover:text-secondary">
-                                    ARYA INSULATION
-                                </span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
+             
             </div>
         </footer>
     );
