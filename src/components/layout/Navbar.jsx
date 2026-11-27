@@ -40,6 +40,7 @@ const navLinks = [
   { name: "About", href: "/about-us" },
   { name: "Our Products", href: "/our-products" },
   { name: "Our Articles", href: "/our-articles" },
+  { name: "Sitemap", href: "/sitemap" },
   { name: "Contact", href: "/contact-us" },
 ];
 

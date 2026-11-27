@@ -109,13 +109,13 @@ function ProductCard({ product }) {
 
                     <div className="flex items-center justify-between gap-3 border-t border-border pt-4">
 
-                        <span className="text-xs font-extrabold text-primary">
+                        <span className="text-xs font-extrabold text-secondary animate-pulseanimate-pulse">
                             View Product
                         </span>
 
                         <ArrowRight
                             size={18}
-                            className="text-secondary transition-transform duration-300 group-hover:translate-x-1"
+                            className="text-secondary transition-transform duration-300 animate-pulse group-hover:translate-x-1"
                         />
                     </div>
                 </div>
@@ -704,17 +704,12 @@ export default function AllProducts() {
                     <div className="grid items-start gap-7 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[310px_minmax(0,1fr)] xl:gap-9">
 
                         {/* ================= DESKTOP SIDEBAR ================= */}
-
                         <aside className="products-sidebar hidden lg:block">
 
                             <CategorySidebar
                                 activeCategory={activeCategory}
-                                onCategoryChange={
-                                    handleCategoryChange
-                                }
-                                onOpenInquiry={() =>
-                                    setOpenPopup(true)
-                                }
+                                onCategoryChange={handleCategoryChange}
+                                onOpenInquiry={() => setOpenPopup(true)}
                             />
                         </aside>
 
@@ -723,7 +718,6 @@ export default function AllProducts() {
                         <div className="min-w-0">
 
                             {/* Products Heading */}
-
                             <div className="mb-6">
 
                                 <div className="mb-3 flex items-center gap-3">
@@ -746,7 +740,6 @@ export default function AllProducts() {
                             {/* ================= FILTER TOOLBAR ================= */}
 
                             <div className="mb-6 rounded-xl border border-border bg-white p-3 sm:p-4">
-
                                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
 
                                     {/* Mobile Filter Button */}
@@ -833,7 +826,6 @@ export default function AllProducts() {
                                 </div>
 
                                 {/* Active Filters */}
-
                                 {(activeCategory !== "all" ||
                                     search ||
                                     sort !== "default") && (
