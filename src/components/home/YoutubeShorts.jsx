@@ -100,7 +100,7 @@ export default function YoutubeShorts() {
 
             {/* ================= HEADING ================= */}
 
-            <div className="relative z-10 mx-auto mb-8 flex max-w-[1500px] flex-col justify-between gap-6 px-5 sm:px-8 lg:mb-10 lg:flex-row lg:items-end lg:px-12">
+            <div className="relative z-10 mx-auto mb-8 flex max-w-[1500px] flex-col justify-between gap-6 px-5 sm:px-8 lg:mb-10 flex-row lg:items-end lg:px-12">
 
                 <div>
 
@@ -113,7 +113,7 @@ export default function YoutubeShorts() {
                         </span>
                     </div>
 
-                    <h2 className="font-heading text-[clamp(2.4rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
+                    <h2 className="font-heading text-[clamp(2rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
                         See Our Racks
 
                         <br />

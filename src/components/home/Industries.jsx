@@ -116,6 +116,42 @@ function MovingColumn({ items, direction, columnRef }) {
     );
 }
 
+function MobileIndustrySlider({ items, direction }) {
+    return (
+        <div className="industry-mobile-mask overflow-hidden lg:hidden">
+            <div
+                className={`flex w-max gap-3 py-2 ${direction === "left"
+                    ? "industry-slide-left"
+                    : "industry-slide-right"
+                    }`}
+            >
+                {[...items, ...items, ...items].map((item, index) => (
+                    <div
+                        key={`${direction}-${index}`}
+                        className="group relative h-[115px] w-[155px] shrink-0 overflow-hidden rounded-xl bg-[#E8EEF3] sm:h-[145px] sm:w-[200px]"
+                    >
+                        <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            sizes="200px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#071A2C]/90 via-transparent to-transparent" />
+
+                        <div className="absolute bottom-0 left-0 right-0 p-3">
+                            <span className="text-xs font-bold text-white sm:text-sm">
+                                {item.title}
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
 export default function Industries() {
     const sectionRef = useRef(null);
     const leftRef = useRef(null);
@@ -293,42 +329,49 @@ export default function Industries() {
                         columnRef={leftRef}
                     />
 
-                    <div>
-                        {/* Section heading */}
+                    <div className="min-w-0">
+
+                        {/* TOP MOBILE SLIDER */}
+                        <div className="mb-3 lg:hidden">
+                            <MobileIndustrySlider
+                                items={leftIndustries}
+                                direction="left"
+                            />
+                        </div>
+
+                        {/* SECTION HEADING */}
                         <div
                             data-industry-reveal
                             className="py-5 text-center"
                         >
                             <div className="mb-2 flex items-center justify-center gap-3">
                                 <span className="h-px w-9 bg-secondary" />
+
                                 <span className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">
                                     Industries We Serve
                                 </span>
+
                                 <span className="h-px w-9 bg-secondary" />
                             </div>
 
-                            <h2 className="font-heading text-[clamp(2.8rem,5vw,5rem)] font-extrabold leading-[1] tracking-[-0.055em] text-primary">
+                            <h2 className="font-heading text-[clamp(2.3rem,5vw,5rem)] font-extrabold leading-[1] tracking-[-0.055em] text-primary">
                                 Spaces We{" "}
                                 <span className="text-secondary">Transform.</span>
                             </h2>
-
-                            {/* <p className="mx-auto mt-5 max-w-[650px] text-sm leading-[1.8] text-muted sm:text-base">
-                        From supermarkets to warehouses, our innovative
-                        rack solutions bring strength, organization, and
-                        efficiency to every space.
-                    </p> */}
                         </div>
 
-                        {/* CENTER: Video */}
+                        {/* CENTER VIDEO */}
                         <div data-industry-reveal className="relative min-w-0">
-                            {/* Decorative corners */}
+
                             <span className="pointer-events-none absolute -left-3 -top-3 h-6 w-6 border-l border-t border-secondary" />
                             <span className="pointer-events-none absolute -right-3 -top-3 h-6 w-6 border-r border-t border-secondary" />
                             <span className="pointer-events-none absolute -bottom-3 -left-3 h-6 w-6 border-b border-l border-secondary" />
                             <span className="pointer-events-none absolute -bottom-3 -right-3 h-6 w-6 border-b border-r border-secondary" />
 
                             <div className="rounded-[24px] border border-secondary/35 bg-white p-2.5 shadow-[0_30px_80px_-45px_rgba(16,42,67,0.35)] sm:p-3.5">
+
                                 <div className="relative aspect-video overflow-hidden rounded-[16px] bg-primary">
+
                                     <video
                                         ref={videoRef}
                                         src="/hero.mp4"
@@ -343,15 +386,14 @@ export default function Industries() {
                                         className="h-full w-full object-cover"
                                     />
 
-                                    {/* Video bottom gradient */}
                                     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/45 to-transparent" />
 
-                                    {/* Bottom video controls */}
-                                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between sm:bottom-6 sm:left-6 sm:right-6">
+                                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between sm:bottom-6 sm:left-6 sm:right-6">
+
                                         <div className="flex items-center gap-2">
                                             <span className="h-2 w-2 animate-pulse rounded-full bg-secondary" />
 
-                                            <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white sm:text-xs">
+                                            <span className="text-[9px] font-semibold uppercase tracking-[0.15em] text-white sm:text-xs">
                                                 Discover Our Work
                                             </span>
                                         </div>
@@ -360,10 +402,8 @@ export default function Industries() {
                                             <button
                                                 type="button"
                                                 onClick={togglePlayback}
-                                                aria-label={
-                                                    isPlaying ? "Pause video" : "Play video"
-                                                }
-                                                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/45 text-white backdrop-blur-md transition hover:bg-secondary"
+                                                aria-label={isPlaying ? "Pause video" : "Play video"}
+                                                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-black/45 text-white backdrop-blur-md transition hover:bg-secondary sm:h-10 sm:w-10"
                                             >
                                                 {isPlaying ? (
                                                     <span className="flex gap-[3px]">
@@ -378,10 +418,8 @@ export default function Industries() {
                                             <button
                                                 type="button"
                                                 onClick={toggleSound}
-                                                aria-label={
-                                                    isMuted ? "Unmute video" : "Mute video"
-                                                }
-                                                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/45 text-white backdrop-blur-md transition hover:bg-secondary"
+                                                aria-label={isMuted ? "Unmute video" : "Mute video"}
+                                                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-black/45 text-white backdrop-blur-md transition hover:bg-secondary sm:h-10 sm:w-10"
                                             >
                                                 {isMuted ? (
                                                     <VolumeX size={17} />
@@ -394,6 +432,15 @@ export default function Industries() {
                                 </div>
                             </div>
                         </div>
+
+                        {/* BOTTOM MOBILE SLIDER */}
+                        <div className="mt-3 lg:hidden">
+                            <MobileIndustrySlider
+                                items={rightIndustries}
+                                direction="right"
+                            />
+                        </div>
+
                     </div>
 
 

@@ -48,7 +48,6 @@ function ProductCard({ category, index }) {
                 </span>
 
                 {/* Category Image */}
-
                 <div className="absolute inset-0 p-3">
                     <div className="relative h-full w-full transition-transform duration-700 ease-out group-hover:scale-105">
                         <Image
@@ -62,7 +61,6 @@ function ProductCard({ category, index }) {
                 </div>
 
                 {/* Top Right Arrow */}
-
                 <div className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-primary transition-all duration-300 group-hover:rotate-45 group-hover:border-secondary group-hover:bg-secondary group-hover:text-white">
                     <ArrowUpRight size={20} />
                 </div>
@@ -74,9 +72,9 @@ function ProductCard({ category, index }) {
 
             {/* Card Content */}
 
-            <div className="flex flex-1 flex-col p-4">
+            <div className="flex flex-1 flex-col p-2 sm:p-4">
 
-                <h3 className="font-heading text-lg font-extrabold leading-[1.35] tracking-[-0.025em] text-primary transition-colors duration-300 group-hover:text-secondary sm:text-xl">
+                <h3 className="font-heading text-sm font-extrabold leading-[1.35] tracking-[-0.025em] text-primary transition-colors duration-300 group-hover:text-secondary sm:text-xl">
                     {category.name}
                 </h3>
 
@@ -108,7 +106,7 @@ function ContactCard({ onOpen }) {
     ];
 
     return (
-        <div className="product-reveal relative isolate flex h-full min-h-[340px] flex-col justify-center overflow-hidden rounded-[20px] bg-primary p-7 text-white sm:col-span-2 sm:p-9 lg:p-10">
+        <div className="product-reveal relative isolate flex h-full min-h-[340px] flex-col justify-center overflow-hidden rounded-[20px] bg-primary p-7 text-white col-span-2 sm:p-9 lg:p-10">
 
             {/* Background Image */}
             <Image
@@ -321,7 +319,7 @@ export default function Products() {
                                 </span>
                             </div>
 
-                            <h2 className="products-heading font-heading text-[clamp(2.5rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
+                            <h2 className="products-heading font-heading text-[clamp(2rem,4.5vw,5rem)] font-extrabold leading-[1.08] tracking-[-0.05em] text-primary">
                                 Supermarket Racks Built
                                 <br />
                                 for{" "}
@@ -346,7 +344,7 @@ export default function Products() {
 
                     {/* Categories Grid */}
 
-                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:gap-7">
+                    <div className="grid gap-5 grid-cols-2 sm:gap-6 xl:grid-cols-4 xl:gap-7">
 
                         {categories.map((category, index) => (
                             <ProductCard

@@ -125,7 +125,7 @@ export default function Categories() {
                     </div>
 
                     {/* Slider navigation */}
-                    <div className="flex items-center gap-3">
+                    <div className="sm:flex hidden items-center gap-3">
                         <button
                             ref={prevRef}
                             type="button"
