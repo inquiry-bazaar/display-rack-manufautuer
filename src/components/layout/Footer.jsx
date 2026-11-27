@@ -39,7 +39,7 @@ const footerLinks = [
         title: "Company",
         links: [
             { label: "Our Story", href: "/about-us" },
-            { label: "Our Projects", href: "/#projects" },
+            { label: "Our Projects", href: "/gallery" },
             { label: "Rack Solutions", href: "/our-products" },
             { label: "Sitemap", href: "/sitemap" },
             { label: "Contact", href: "/contact-us" },

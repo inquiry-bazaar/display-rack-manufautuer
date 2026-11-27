@@ -8,6 +8,7 @@ import {
     CircleHelp,
     Factory,
     Home,
+    Images,
     Mail,
     Map,
     MessageSquareQuote,
@@ -53,6 +54,12 @@ const mainPages = [
         description: "Talk to our team about your project.",
         href: "/contact-us",
         icon: Mail,
+    },
+    {
+        title: "Gallery",
+        description: "Browse our static gallery of retail rack collections.",
+        href: "/gallery",
+        icon: Images,
     },
     {
         title: "Sitemap",
