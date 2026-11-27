@@ -223,33 +223,9 @@ export default function Footer() {
                     >
                         <div className="flex items-center justify-center gap-[1.5vw]">
                             {/* Logo mark */}
-                            <div className="relative flex aspect-square w-[12%] shrink-0 items-center justify-center overflow-hidden rounded-[12px] bg-secondary sm:rounded-[20px] lg:rounded-[28px]">
+                            <div className="relative flex aspect-square w-[12%] shrink-0 items-center justify-center overflow-hidden rounded-[12px] sm:rounded-[20px] lg:rounded-[28px]">
                                 {/* Abstract rack-inspired symbol */}
-                                <svg
-                                    viewBox="0 0 100 100"
-                                    fill="none"
-                                    className="h-[65%] w-[65%] text-white"
-                                    aria-hidden="true"
-                                >
-                                    <path
-                                        d="M18 20H82V32H18V20Z"
-                                        fill="currentColor"
-                                    />
-                                    <path
-                                        d="M18 44H82V56H18V44Z"
-                                        fill="currentColor"
-                                    />
-                                    <path
-                                        d="M18 68H82V80H18V68Z"
-                                        fill="currentColor"
-                                    />
-                                    <path
-                                        d="M18 17V84M82 17V84"
-                                        stroke="currentColor"
-                                        strokeWidth="7"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
+                                <img src="/logo.webp" alt="logo" />
                             </div>
 
                             {/* Large text */}

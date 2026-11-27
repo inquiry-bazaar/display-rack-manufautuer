@@ -1375,26 +1375,23 @@ export default [
                 applicationImage: "/categories/4.webp",
             },
             {
-                "name": "Glass Door Pharmacy Supermarket Rack",
-                "slug": "glass-door-pharmacy-supermarket-rack",
-                "image": "/products/glass-door-pharmacy-supermarket-rack.webp",
-                "metaTitle": "Glass Door Pharmacy Rack Manufacturer | Arya Insulation",
-                "metaDescription": "Arya Insulation Pvt Ltd manufactures glass door pharmacy rack in MS steel. Contact us for customized rack options.",
+                "name": "Premium Pharmacy Supermarket Rack",
+                "slug": "premium-pharmacy-supermarket-rack",
+                "image": "/products/9.webp",
+                "metaTitle": "Premium Pharmacy Rack Manufacturer | Arya Insulation",
+                "metaDescription": "Arya Insulation Pvt Ltd manufactures Premium pharmacy rack in MS steel. Contact us for customized rack options.",
 
                 images: [
 
                 ],
 
-                description: "The glass door pharmacy rack uses an MS steel primary support structure with suitable glass panels and doors to create an enclosed display cabinet. It can be configured for selected products that require a more protected presentation.",
+                description: "The Premium pharmacy rack uses an MS steel primary support structure with suitable Premium panels and doors to create an enclosed display cabinet. It can be configured for selected products that require a more protected presentation.",
 
-                overview: "Cabinet dimensions, shelving and door arrangement should be finalized according to the store's display and access requirements. Arya Insulation Pvt Ltd manufactures this glass door pharmacy supermarket rack for retailers and commercial store projects that need a planned, product-specific display arrangement. The rack is built around an MS (mild steel) primary structure, with the final configuration selected according to the merchandise, available floor or wall space, and the store's layout. Depending on the model, the display can be planned with suitable shelves and compatible accessories such as hooks, wire sections, bins, baskets, acrylic components, glass or finish panels. These additions are selected only where they suit the intended application. Arya Insulation Pvt Ltd can discuss the required rack dimensions, shelf arrangement and accessory configuration against the project brief. This glass door pharmacy supermarket rack is suitable for pharmacies, medical stores, healthcare showrooms and selected product display areas. A properly planned rack helps retailers group products, make merchandise easier to browse and use the available retail space more effectively. Share your product sizes, store layout and quantity requirement with Arya Insulation Pvt Ltd to discuss a suitable supermarket rack configuration.",
+                overview: "Cabinet dimensions, shelving and door arrangement should be finalized according to the store's display and access requirements. Arya Insulation Pvt Ltd manufactures this Premium pharmacy supermarket rack for retailers and commercial store projects that need a planned, product-specific display arrangement. The rack is built around an MS (mild steel) primary structure, with the final configuration selected according to the merchandise, available floor or wall space, and the store's layout. Depending on the model, the display can be planned with suitable shelves and compatible accessories such as hooks, wire sections, bins, baskets, acrylic components, glass or finish panels. These additions are selected only where they suit the intended application. Arya Insulation Pvt Ltd can discuss the required rack dimensions, shelf arrangement and accessory configuration against the project brief. This Premium pharmacy supermarket rack is suitable for pharmacies, medical stores, healthcare showrooms and selected product display areas. A properly planned rack helps retailers group products, make merchandise easier to browse and use the available retail space more effectively. Share your product sizes, store layout and quantity requirement with Arya Insulation Pvt Ltd to discuss a suitable supermarket rack configuration.",
 
                 specifications: {
-                    "Rack Type": "Glass Door Pharmacy Rack",
+                    "Rack Type": "Premium Pharmacy Rack",
                     "Material": "MS Steel",
-                    "Configuration": "Enclosed Glass Display Cabinet",
-                    "Door Material": "Glass",
-                    "Panel Material": "Glass",
                     "Door Arrangement": "Customizable",
                     "Hardware": "As per configuration",
                     "Height": "As per requirement",
@@ -1408,7 +1405,6 @@ export default [
                 features: [
                     "Enclosed product display",
                     "Helps limit exposure to dust",
-                    "Clear visibility through glass",
                     "Configurable internal shelves",
                     "Steel structural support",
                 ],

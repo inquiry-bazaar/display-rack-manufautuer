@@ -313,16 +313,14 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             {/* Logo icon */}
-            <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-primary text-secondary shadow-sm transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-lg">
-              <Warehouse size={23} strokeWidth={1.9} />
-
-              <span className="absolute bottom-0 left-0 h-[3px] w-0 bg-secondary transition-all duration-500 group-hover:w-full" />
+            <div className="w-18 h-16">
+              <img src="/logo.webp" alt="logo" className="w-full h-full" />
             </div>
 
             {/* Logo text */}
-            <div className="flex flex-col">
+            <div className="sm:flex hidden flex-col">
               <span className="font-heading text-[19px] font-extrabold leading-tight tracking-[-0.045em] text-primary sm:text-[21px]">
-                Arya Insulation
+                Arya Insulation Pvt. Ltd.
               </span>
 
               <span className="mt-0.5 text-[10px] font-medium tracking-[0.01em] text-muted sm:text-[11px]">
