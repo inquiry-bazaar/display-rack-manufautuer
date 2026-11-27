@@ -319,7 +319,7 @@ export default function Navbar() {
             </div>
 
             {/* Logo text */}
-            <div className="sm:flex hidden flex-col">
+            {/* <div className="sm:flex hidden flex-col">
               <span className="font-heading text-[19px] font-extrabold leading-tight tracking-[-0.045em] text-primary sm:text-[21px]">
                 Arya Insulation Pvt. Ltd.
               </span>
@@ -327,7 +327,7 @@ export default function Navbar() {
               <span className="mt-0.5 text-[10px] font-medium tracking-[0.01em] text-muted sm:text-[11px]">
                 Supermarket & Display Racks
               </span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop navigation */}
