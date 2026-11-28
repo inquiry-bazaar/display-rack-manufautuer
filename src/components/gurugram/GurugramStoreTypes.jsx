@@ -42,7 +42,7 @@ const storeTypes = [
   {
     id: 3,
     title: "Quick-Commerce Dark Stores",
-    image: "/images/quick-commerce-store.jpg",
+    image: "/products/3.webp",
     icon: FaBox,
     description:
       "Built for picking speed, not browsing. Heavy-duty bays, labelled bin locations and aisles planned around the picker's route.",
@@ -53,7 +53,7 @@ const storeTypes = [
   {
     id: 4,
     title: "High-Street & SCO Shops",
-    image: "/images/high-street-shop.jpg",
+    image: "/products/5.webp",
     icon: FaStore,
     description:
       "Ground-floor shops in SCO plots and markets need wall racks that show stock from the road and a strong checkout counter.",
@@ -192,14 +192,14 @@ export default function GurugramStoreTypes() {
 
                 {/* IMAGE */}
 
-                <div className="relative h-[235px] w-full overflow-hidden sm:h-[215px] xl:h-[265px]">
+                <div className="relative h-[235px] w-full overflow-hidden sm:h-[315px] ">
 
                   <Image
                     src={store.image}
                     alt={store.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* SUBTLE IMAGE OVERLAY */}
@@ -232,7 +232,7 @@ export default function GurugramStoreTypes() {
 
                   {/* DESCRIPTION */}
 
-                  <p className="flex-1 text-[16px] leading-[1.55] text-[#182b43] sm:text-[17px]">
+                  <p className="flex-1 text-[16px] leading-[1.55] text-[#182b43] sm:text-[15px]">
                     {store.description}
                   </p>
 
@@ -242,10 +242,10 @@ export default function GurugramStoreTypes() {
 
                     <BottomIcon className="shrink-0 text-[32px] text-[#ff6900] sm:text-[36px]" />
 
-                    <p className="text-[15px] leading-[1.5] text-[#102443] sm:text-[16px]">
+                    <p className="text-[9px] leading-[1.5] text-[#102443] sm:text-[14px]">
 
                       <span className="font-extrabold text-[#f4510b]">
-                        Usually:
+                      
                       </span>{" "}
 
                       <span className="font-medium">
