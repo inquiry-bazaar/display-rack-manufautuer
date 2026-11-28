@@ -207,7 +207,7 @@ export default function RackPricingSection() {
 
           <motion.a
             variants={itemVariants}
-            href="#enquiry"
+            href="https://wa.me/918587901795"
             whileHover={{ scale: 1.035 }}
             whileTap={{ scale: 0.97 }}
             className="mt-9 flex w-fit items-center justify-center gap-6 rounded-full bg-gradient-to-r from-[#ff7300] to-[#ed5900] px-9 py-4 text-base font-bold text-white shadow-lg shadow-orange-500/20 transition-shadow hover:shadow-orange-500/40 sm:text-base"

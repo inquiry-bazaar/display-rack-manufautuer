@@ -9,6 +9,7 @@ import RackProductGuide from '@/components/noida/RackProductGuide'
 import React from 'react'
 import NoidaHero from '@/components/noida/NoidaHero'
 import Products from '@/components/delhi/Products'
+import NoidaTestimonials from '@/components/noida/NoidaTestimonials'
 
 export default function page() {
   return (
@@ -22,6 +23,7 @@ export default function page() {
    <NoidaAreas/>
    <NoidaPlanningGuide/>
    <NodiaFAQ/>
+   <NoidaTestimonials/>
    <NoidaContactSection/>
    </>
   )

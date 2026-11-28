@@ -212,48 +212,7 @@ export default function AreasWeServe() {
                     </div>
                 </div>
 
-                {/* CONTROLS */}
-
-                <div className="mt-4 flex items-center justify-center gap-7 md:gap-11">
-
-                    <motion.button
-                        type="button"
-                        onClick={prevSlide}
-                        whileHover={{ scale: 1.12 }}
-                        whileTap={{ scale: 0.9 }}
-                        aria-label="Previous area"
-                        className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white hover:text-[#061c34]"
-                    >
-                        <ChevronLeft size={27} />
-                    </motion.button>
-
-                    <div className="flex items-center gap-3">
-                        {areas.map((area, index) => (
-                            <button
-                                key={area.id}
-                                type="button"
-                                onClick={() => setActive(index)}
-                                aria-label={`Go to ${area.title}`}
-                                className={`rounded-full transition-all duration-300 ${active === index
-                                        ? "h-4 w-4 scale-110 bg-[#ff7900]"
-                                        : "h-3.5 w-3.5 bg-[#385a76] hover:bg-white"
-                                    }`}
-                            />
-                        ))}
-                    </div>
-
-                    <motion.button
-                        type="button"
-                        onClick={nextSlide}
-                        whileHover={{ scale: 1.12 }}
-                        whileTap={{ scale: 0.9 }}
-                        aria-label="Next area"
-                        className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white text-white transition-colors hover:bg-white hover:text-[#061c34]"
-                    >
-                        <ChevronRight size={27} />
-                    </motion.button>
-
-                </div>
+                
             </div>
 
             {/* MOBILE CARDS */}

@@ -17,28 +17,28 @@ import {
 
 const steps = [
   {
-    day: "Day 1",
+    day: "Step 1",
     title: "You call or WhatsApp",
     description:
       "Share your area, shop size and what you sell. We book a site visit.",
     type: "whatsapp",
   },
   {
-    day: "Day 2",
+    day: "Step 2",
     title: "Free site visit",
     description:
       "We measure the shop, check doors and stairs, and note your stock.",
     type: "visit",
   },
   {
-    day: "Day 3",
+    day: "Step 3",
     title: "Layout and fixed quote",
     description:
       "A drawing of every rack and aisle, with sizes, thickness and the final price.",
     type: "layout",
   },
   {
-    day: "Day 4",
+    day: "Step 4",
     title: "Delivered and fitted",
     description:
       "Our fitters install, level and fix price strips. You start stocking the same day.",

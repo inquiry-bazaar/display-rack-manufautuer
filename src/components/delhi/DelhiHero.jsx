@@ -13,6 +13,7 @@ import {
   Store,
   Clock3,
 } from "lucide-react";
+import categories from "@/utils/data";
 
 const benefits = [
   "Free site visit and layout in Delhi",
@@ -246,7 +247,7 @@ export default function DelhiHero({ onSubmitLead }) {
                 from 5 Google reviews
                 <span className="mx-2 text-[#F58220]">•</span>
                 <span className="font-bold text-white">
-                  20+
+                  200+
                 </span>{" "}
                 Delhi stores fitted
               </p>
@@ -422,14 +423,17 @@ export default function DelhiHero({ onSubmitLead }) {
                     id="delhi-store-type"
                     name="storeType"
                     required
-                    defaultValue="Kirana / grocery store"
+                    defaultValue=""
                     className={`${inputClass} cursor-pointer`}
                   >
-                    <option>Kirana / grocery store</option>
-                    <option>Supermarket / departmental store</option>
-                    <option>Fruit & vegetable shop</option>
-                    <option>Medical store</option>
-                    <option>Other retail shop</option>
+                    <option value="" disabled>
+                      Select a store category
+                    </option>
+                    {categories.map((category) => (
+                      <option key={category.slug} value={category.name}>
+                        {category.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -485,7 +489,7 @@ export default function DelhiHero({ onSubmitLead }) {
               {/* WhatsApp */}
               <div className="mt-6 border-t border-[#EDF0F3] pt-5">
                 <a
-                  href="https://wa.me/91XXXXXXXXXX"
+                  href="https://wa.me/918587901795"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center gap-2.5 text-[13px] font-bold text-[#263447] transition-colors hover:text-[#F58220]"
