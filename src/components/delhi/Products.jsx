@@ -3,7 +3,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,6 +18,13 @@ import "swiper/css/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 import categories from "@/utils/data";
+
+const WHATSAPP = "918587901795";
+
+const getEnquiryUrl = (productName) => {
+    const message = `Hello Arya Insulation, I am interested in ${productName}. Please share more details.`;
+    return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
+};
 
 export default function Products() {
     const sectionRef = useRef(null);
@@ -181,8 +187,11 @@ export default function Products() {
                     >
                         {categories.map((category, index) => (
                             <SwiperSlide key={index}>
-                                <Link
-                                    href={category.slug}
+                                <a
+                                    href={getEnquiryUrl(category.name)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Enquire about ${category.name} on WhatsApp`}
                                     className="group block"
                                 >
                                     {/* Image area */}
@@ -221,7 +230,7 @@ export default function Products() {
 
                                         <div className="mx-auto mt-1 h-[2px] w-0 bg-secondary transition-all duration-500 group-hover:w-12" />
                                     </div>
-                                </Link>
+                                </a>
                             </SwiperSlide>
                         ))}
                     </Swiper>

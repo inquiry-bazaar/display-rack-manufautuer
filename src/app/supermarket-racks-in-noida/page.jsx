@@ -8,6 +8,7 @@ import NoidaRackChecklist from '@/components/noida/NoidaRackChecklist'
 import RackProductGuide from '@/components/noida/RackProductGuide'
 import React from 'react'
 import NoidaHero from '@/components/noida/NoidaHero'
+import Products from '@/components/delhi/Products'
 
 export default function page() {
   return (
@@ -16,6 +17,7 @@ export default function page() {
    <StatsSection/>
    <NoidaPackages/>
    <NoidaRackChecklist/>
+   <Products/>
    <RackProductGuide/>
    <NoidaAreas/>
    <NoidaPlanningGuide/>

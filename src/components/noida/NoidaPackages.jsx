@@ -2,7 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import {
@@ -127,6 +126,13 @@ const cardVariants = {
       ease: [0.22, 1, 0.36, 1],
     },
   },
+};
+
+const WHATSAPP = "918587901795";
+
+const getPackageEnquiryUrl = (packageName) => {
+  const message = `Hello Arya Insulation, I am interested in the ${packageName} package. Please share more details.`;
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
 };
 
 export default function NoidaPackages() {
@@ -307,8 +313,10 @@ export default function NoidaPackages() {
 
                   {/* CTA BUTTON */}
 
-                  <Link
-                    href={`/contact-us?package=${encodeURIComponent(pkg.name)}`}
+                  <a
+                    href={getPackageEnquiryUrl(pkg.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`group/btn mt-7 flex min-h-[55px] w-full items-center justify-center gap-4 rounded-full border-[1.5px] px-4 py-3 text-sm font-extrabold transition-all duration-300 sm:text-base ${
                       pkg.featured
                         ? "border-[#ff6900] bg-[#ff6900] text-white hover:border-[#e95b00] hover:bg-[#e95b00]"
@@ -322,7 +330,7 @@ export default function NoidaPackages() {
                         ? "text-white"
                         : "text-[#f36b0b] group-hover/btn:text-white"
                     }`} />
-                  </Link>
+                  </a>
 
                 </div>
               </motion.div>
