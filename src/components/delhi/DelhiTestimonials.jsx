@@ -35,15 +35,7 @@ const testimonials = [
       "[A real Google review from a Delhi customer, with permission.]",
     image: "/industries/10.webp",
   },
-  {
-    id: 4,
-    title: "Google Review from Delhi",
-    name: "[First name] · [Store], [Locality], Delhi",
-    designation: "Delhi Customer Review",
-    review:
-      "[A real Google review from a Delhi customer, with permission.]",
-    image: "/industries/8.webp",
-  },
+
 ];
 
 
